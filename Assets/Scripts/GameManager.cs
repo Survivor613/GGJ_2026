@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     public void StartPlay() // 临时实现，较为简单，未实现保存功能
     {
-        StartCoroutine(ChangeSceneCo("dialog1"));
+        StartCoroutine(ChangeSceneCo("Dialog_0"));
     }
 
     public void BackToMainMenu()

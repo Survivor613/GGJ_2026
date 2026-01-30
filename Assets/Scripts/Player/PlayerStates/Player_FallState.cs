@@ -31,8 +31,6 @@ public class Player_FallState : Player_AiredState
             return;
         }
 
-        Debug.Log(player.groundDetected);
-
         if (player.groundDetected)
         {
             stateMachine.ChangeState(player.idleState);

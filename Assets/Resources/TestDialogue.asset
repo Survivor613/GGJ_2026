@@ -17,6 +17,7 @@ MonoBehaviour:
   - rid: 2889082942009376785
   - rid: 2889082942009376786
   - rid: 2889082942009376787
+  - rid: 6373314347078778882
   references:
     version: 2
     RefIds:
@@ -50,9 +51,15 @@ MonoBehaviour:
       type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         id: line_3
-        nextId: 
+        nextId: cmd_1
         speakerId: 
         speakerName: "\u65C1\u767D"
         text: "\u8FD9\u662F\u4E00\u6BB5\u65C1\u767D\u6587\u5B57\uFF0C\u6CA1\u6709\u89D2\u8272\u9AD8\u4EAE\u3002"
         voiceKey: 
         expressionKey: 
+    - rid: 6373314347078778882
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: cmd_1
+        nextId: 
+        command: scene Level_0

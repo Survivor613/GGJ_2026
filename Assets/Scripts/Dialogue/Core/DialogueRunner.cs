@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DialogueSystem.Data;
 using DialogueSystem.UI;
 using DialogueSystem.Actors;
@@ -136,10 +137,36 @@ namespace DialogueSystem.Core
                         }
                         break;
                     case "scene":
+                        // --- 修改后的逻辑 ---
                         if (parts.Length > 1)
                         {
-                            string sceneName = parts[1];
-                            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+                            // 兼容两种格式：
+                            // 1. scene LevelName
+                            // 2. scene load name=LevelName
+                            string sceneName = "";
+
+                            if (parts[1].ToLower() == "load")
+                            {
+                                var paramsMap = new Dictionary<string, string>();
+                                for (int i = 2; i < parts.Length; i++)
+                                {
+                                    string[] kv = parts[i].Split('=');
+                                    if (kv.Length == 2) paramsMap[kv[0]] = kv[1];
+                                }
+                                sceneName = paramsMap.GetValueOrDefault("name");
+                            }
+                            else
+                            {
+                                sceneName = parts[1];
+                            }
+
+                            if (!string.IsNullOrEmpty(sceneName))
+                            {
+                                // 使用你的 GameManager 执行带转场的切换
+                                GameManager.instance.ChangeSceneTo(sceneName);
+                                // 注意：场景切换后当前对话会自动中断，所以这里直接返回即可
+                                return;
+                            }
                         }
                         break;
                 }
@@ -177,6 +204,45 @@ namespace DialogueSystem.Core
             else if (subAction == "focus")
             {
                 actorController.SetFocus(id);
+            }
+        }
+
+        private void HandleSceneCommand(string[] parts)
+        {
+            if (parts.Length < 2) return;
+            string subAction = parts[1].ToLower();
+
+            var paramsMap = new Dictionary<string, string>();
+            for (int i = 2; i < parts.Length; i++)
+            {
+                string[] kv = parts[i].Split('=');
+                if (kv.Length == 2) paramsMap[kv[0]] = kv[1];
+            }
+
+            if (subAction == "load")
+            {
+                string sceneName = paramsMap.GetValueOrDefault("name");
+                string sceneIndex = paramsMap.GetValueOrDefault("index");
+                string modeValue = paramsMap.GetValueOrDefault("mode", "single");
+                LoadSceneMode mode = modeValue.ToLower() == "additive" ? LoadSceneMode.Additive : LoadSceneMode.Single;
+
+                if (!string.IsNullOrEmpty(sceneName))
+                {
+                    SceneManager.LoadScene(sceneName, mode);
+                }
+                else if (int.TryParse(sceneIndex, out int index))
+                {
+                    SceneManager.LoadScene(index, mode);
+                }
+                else
+                {
+                    Debug.LogWarning("Scene command missing name or index. Example: scene load name=YourScene");
+                }
+            }
+            else if (subAction == "reload")
+            {
+                var activeScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(activeScene.buildIndex);
             }
         }
 
