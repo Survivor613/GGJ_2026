@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1714c17dc5cee4388b88611e115c6a, type: 3}
+  m_Name: AUDIO DATABASE
+  m_EditorClassIdentifier: 
+  player:
+  - audioName: player_attackHit
+    clips:
+    - {fileID: 8300000, guid: 035727db636a15642b779bdf369375b3, type: 3}
+    - {fileID: 8300000, guid: 65c65cffaf029fa4ca8bcd09f24de955, type: 3}
+    - {fileID: 8300000, guid: b2a65e20f30369e47ae149f2dfac0506, type: 3}
+    volume: 1
+  - audioName: player_attackMiss
+    clips:
+    - {fileID: 8300000, guid: bce93b0e46b2b0c48aaab2a464535c01, type: 3}
+    - {fileID: 8300000, guid: 780b041ce19b71e45a3c385598904a3c, type: 3}
+    - {fileID: 8300000, guid: 8a025e203c5570d478209bc565b6a51d, type: 3}
+    volume: 1
+  - audioName: player_dash
+    clips:
+    - {fileID: 8300000, guid: 3c80fa34b14261b48b5348452d019ebd, type: 3}
+    - {fileID: 8300000, guid: 2efa00ce141a4f34bab9465302fd61bb, type: 3}
+    volume: 0.5
+  - audioName: player_jump
+    clips:
+    - {fileID: 8300000, guid: f84d99fb73db28a41a99de0e6ffddce1, type: 3}
+    - {fileID: 8300000, guid: 619c8cdbe8ecf4545937c30d315cf447, type: 3}
+    - {fileID: 8300000, guid: 8aec513ee65c6ca4ba07b8657cbeff4e, type: 3}
+    volume: 1
+  - audioName: player_jumpLand
+    clips:
+    - {fileID: 8300000, guid: 922847e3cc12ddc4bb78dd4fb41ab666, type: 3}
+    - {fileID: 8300000, guid: a06c8fb1b67999742b75a88149bd485c, type: 3}
+    volume: 0.5
+  - audioName: player_move
+    clips:
+    - {fileID: 8300000, guid: 98f73377d233cab4b833e373d12e647a, type: 3}
+    - {fileID: 8300000, guid: 8eae967f1ecbf3a40bb267cf3da77bd2, type: 3}
+    - {fileID: 8300000, guid: a40c9be0c2186b948af25494394e5120, type: 3}
+    volume: 1
+  - audioName: player_death
+    clips:
+    - {fileID: 8300000, guid: 9442fc131a265c64b81ddff2fef42af4, type: 3}
+    volume: 1
+  enemy:
+  - audioName: enemy_attack
+    clips:
+    - {fileID: 8300000, guid: 228925112423c604f988c93f27ac1457, type: 3}
+    volume: 0.2
+  - audioName: enemy_death
+    clips:
+    - {fileID: 8300000, guid: e615cceb76b4c794288116fb4278a48d, type: 3}
+    volume: 1
+  - audioName: enemy_player_detected
+    clips:
+    - {fileID: 8300000, guid: 5cd4732bc8b8fc748a4ad30340774118, type: 3}
+    volume: 0.4
+  - audioName: enemy_skeleton_walk
+    clips:
+    - {fileID: 8300000, guid: 98503ce37e84da54fbe943b71e3bd769, type: 3}
+    volume: 0.2
+  chest:
+  - audioName: chest_open
+    clips:
+    - {fileID: 8300000, guid: b0dc9ff8123fdd6458ed117a7fb32257, type: 3}
+    - {fileID: 8300000, guid: b35fb21b7ef058a4ab3e21ac4c88bf35, type: 3}
+    - {fileID: 8300000, guid: 9dc5423372c562f438410037e8cbef86, type: 3}
+    - {fileID: 8300000, guid: 21306d5d29452044d935c913f65bd971, type: 3}
+    volume: 0.6
+  uiAudio:
+  - audioName: button_click
+    clips:
+    - {fileID: 8300000, guid: 5547fe76d7b1aad448f2bd143a942ae1, type: 3}
+    volume: 0.3
+  - audioName: fade_in
+    clips:
+    - {fileID: 8300000, guid: 9b5223072471e38498b9b32c8ff7b42b, type: 3}
+    volume: 0.3
+  - audioName: fade_out
+    clips:
+    - {fileID: 8300000, guid: cd447fab07a1d634584771a4c9bb9875, type: 3}
+    volume: 0.3
+  mainMenuMusic:
+  - audioName: playlist_mainMenu
+    clips:
+    - {fileID: 8300000, guid: 2548e21061acca641934953fdde343ff, type: 3}
+    volume: 0.4
+  levelMusic:
+  - audioName: playlist_levels
+    clips:
+    - {fileID: 8300000, guid: 2548e21061acca641934953fdde343ff, type: 3}
+    volume: 0.4

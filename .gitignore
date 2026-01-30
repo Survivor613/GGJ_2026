@@ -1,0 +1,45 @@
+# --- [Unity 核心忽略文件夹] ---
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[探Logs]/
+/[MemoryCaptures]/
+/[UserSettings]/
+
+# --- [编辑器与 IDE 自动生成的配置文件] ---
+# 忽略 Visual Studio 自动生成的文件
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vsconfig
+
+# 忽略 Rider 自动生成的文件
+.idea/
+*.sln.iml
+
+# --- [资产商店与插件工具] ---
+/[Aa]ssets/AssetStoreTools*
+
+# --- [系统临时文件] ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- [Unity 崩溃报告与日志] ---
+sysinfo.txt
+*.log
+crash.dmp
+error.log
+
+# --- [Addressables 缓存] ---
+/[Aa]ssets/AddressableAssetsData/Windows/*
+/[Aa]ssets/AddressableAssetsData/Android/*
+/[Aa]ssets/AddressableAssetsData/iOS/*
+/[Aa]ssets/StreamingAssets/aa/*
