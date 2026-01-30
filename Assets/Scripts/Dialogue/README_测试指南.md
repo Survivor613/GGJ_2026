@@ -124,6 +124,9 @@ command: "actor show id=alice portrait=smile x=-300 y=0"
 command: "actor hide id=alice"
 command: "actor focus id=alice"
 command: "wait 1.5"
+command: "scene load name=BattleScene"
+command: "scene load index=2 mode=additive"
+command: "scene reload"
 ```
 
 ---

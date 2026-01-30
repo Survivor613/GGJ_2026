@@ -1,0 +1,590 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28558ee3be4e94d40af3c6e97810809b, type: 3}
+  m_Name: Dialogue_FromCsv
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 2889082942009376840
+  - rid: 2889082942009376841
+  - rid: 2889082942009376842
+  - rid: 2889082942009376843
+  - rid: 2889082942009376844
+  - rid: 2889082942009376845
+  - rid: 2889082942009376846
+  - rid: 2889082942009376847
+  - rid: 2889082942009376848
+  - rid: 2889082942009376849
+  - rid: 2889082942009376850
+  - rid: 2889082942009376851
+  - rid: 2889082942009376852
+  - rid: 2889082942009376853
+  - rid: 2889082942009376854
+  - rid: 2889082942009376855
+  - rid: 2889082942009376856
+  - rid: 2889082942009376857
+  - rid: 2889082942009376858
+  - rid: 2889082942009376859
+  - rid: 2889082942009376860
+  - rid: 2889082942009376861
+  - rid: 2889082942009376862
+  - rid: 2889082942009376863
+  - rid: 2889082942009376864
+  - rid: 2889082942009376865
+  - rid: 2889082942009376866
+  - rid: 2889082942009376867
+  - rid: 2889082942009376868
+  - rid: 2889082942009376869
+  - rid: 2889082942009376870
+  - rid: 2889082942009376871
+  - rid: 2889082942009376872
+  - rid: 2889082942009376873
+  - rid: 2889082942009376874
+  - rid: 2889082942009376875
+  - rid: 2889082942009376876
+  - rid: 2889082942009376877
+  - rid: 2889082942009376878
+  - rid: 2889082942009376879
+  - rid: 2889082942009376880
+  - rid: 2889082942009376881
+  - rid: 2889082942009376882
+  - rid: 2889082942009376883
+  - rid: 2889082942009376884
+  - rid: 2889082942009376885
+  - rid: 2889082942009376886
+  - rid: 2889082942009376887
+  - rid: 2889082942009376888
+  - rid: 2889082942009376889
+  - rid: 2889082942009376890
+  - rid: 2889082942009376891
+  references:
+    version: 2
+    RefIds:
+    - rid: 2889082942009376840
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0001
+        nextId: line_0002
+        speakerId: 
+        speakerName: 
+        text: "200X\u5E74\uFF0C\u4ECE\u5E73\u6D77\u5927\u5B66\u6BD5\u4E1A3\u5E74\u540E\uFF0C\u6211\u518D\u6B21\u56DE\u5230\u8FD9\u6761\u66FE\u7ECF\u8BA9\u6211\u65E0\u6BD4\u538C\u6076\u7684\u8857\u9053\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376841
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0002
+        nextId: line_0003
+        speakerId: 
+        speakerName: 
+        text: "\u7A7A\u6C14\u4E2D\u5F25\u6F2B\u7740\u67D0\u79CD\u70DF\u5C18\u548C\u52A3\u8D28\u6CB9\u8102\u7684\u5473\u9053\uFF0C\u5929\u7A7A\u603B\u662F\u7070\u8499\u8499\uFF0C\u4E16\u754C\u6D78\u6CE1\u5728\u4E00\u62B9\u94C5\u8272\u4E2D\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376842
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0003
+        nextId: line_0004
+        speakerId: 
+        speakerName: 
+        text: "\u5915\u9633\u5C06\u8857\u9053\u7684\u955C\u5934\u6495\u626F\u6210\u51E0\u9053\u7AD6\u7EBF\uFF0C\u5C06\u51E1\u4EBA\u5EB8\u5EB8\u788C\u788C\u7684\u4E16\u754C\u5272\u6210\u788E\u7247\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376843
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0004
+        nextId: line_0005
+        speakerId: 
+        speakerName: 
+        text: "\u51E0\u4E2A\u7070\u767D\u7684\u5F71\u5B50\u8E29\u7740\u5915\u9633\u7684\u88C2\u75D5\uFF0C\u4ECE\u6211\u8EAB\u540E\u6361\u8D70\u51E0\u62B9\u91D1\u8272\u2026\u2026"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376844
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0005
+        nextId: line_0006
+        speakerId: 
+        speakerName: "\u964C\u751F\u7684\u5BA2\u4EBA"
+        text: "\u2026\u2026"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376845
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0006
+        nextId: line_0007
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u4F60\u8FD9\u5B69\u5B50\uFF0C\u53D1\u4EC0\u4E48\u5446\u5462\uFF1F\u5BA2\u4EBA\u8BA9\u4F60\u7B97\u94B1\u5462\uFF01"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376846
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0007
+        nextId: line_0008
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u54E6\u2026\u2026\u5143\u5B9D\u4E94\u4E2A\uFF0C\u7EB8\u94B1\u4E24\u540A\uFF0C\u753B\u5708\u4E00\u4E2A\uFF0C\u62E2\u517112\u5143\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376847
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0008
+        nextId: line_0009
+        speakerId: 
+        speakerName: "\u964C\u751F\u7684\u5BA2\u4EBA"
+        text: "\uFF08\u6C99\u6C99\u2026\u2026\uFF09"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376848
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0009
+        nextId: line_0010
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u54FC\uFF0C\u6211\u8FD8\u662F\u4E0D\u5141\u8BB8\u4F60\u7559\u5728\u8FD9\u91CC\u3002\u4F60\u4E0D\u662F\u6700\u8BA8\u538C\u6211\u4EEC\u8FD9\u79CD\u5C0F\u5730\u65B9\u5417\uFF1F\u8FD9\u6050\u6015\u5BB9\u4E0D\u4E0B\u4F60\u8FD9\u79CD\u5A07\u751F\u60EF\u517B\u7684\u300C\u5C0F\u516C\u4E3B\u300D\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376849
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0010
+        nextId: line_0011
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u5976\u5976\uFF0C\u522B\u62FF\u6211\u5F00\u73A9\u7B11\u4E86\uFF0C\u6211\u8981\u662F\u4E0D\u56DE\u6765\uFF0C\u8C01\u6765\u63A5\u66FF\u897F\u7A57\u5E02\u7684\u300C\u5B88\u591C\u4EBA\u300D\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376850
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0011
+        nextId: line_0012
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u54FC\uFF0C\u8FD9\u4E8B\u8FD8\u8F6E\u4E0D\u5230\u4F60\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376851
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0012
+        nextId: line_0013
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u7236\u4EB2\u5417\uFF1F\u53EF\u662F\uFF0C\u81EA\u4ECE\u90A3\u4EF6\u4E8B\u4E4B\u540E\u2026\u2026"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376852
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0013
+        nextId: line_0014
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u522B\u63D0\u90A3\u4EF6\u4E8B\uFF0C\u6211\u4E0D\u60F3\u542C\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376853
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0014
+        nextId: line_0015
+        speakerId: 
+        speakerName: 
+        text: "\u7956\u6BCD\u62BF\u4E86\u62BF\u5634\uFF0C\u6D88\u5931\u5728\u67DC\u53F0\u540E\u7684\u9634\u5F71\u4E2D\uFF0C\u7AB8\u7AB8\u7AA3\u7AA3\u7684\u6298\u7EB8\u58F0\u53C8\u4F20\u4E86\u51FA\u6765\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376854
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0015
+        nextId: line_0016
+        speakerId: 
+        speakerName: 
+        text: "\u4E0D\u8FDC\u5904\u5C31\u662F\u897F\u7A57\u5E02\u4EBA\u6C11\u533B\u9662\uFF0C\u4EBA\u4EEC\u5728\u90A3\u91CC\u8FCE\u6765\u751F\u548C\u6B7B\uFF0C\u4EA6\u6216\u662F\u9677\u5165\u751F\u4E0E\u6B7B\u7684\u6C89\u6CA6\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376855
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0016
+        nextId: line_0017
+        speakerId: 
+        speakerName: 
+        text: "\u65E0\u8BBA\u662F\u591A\u4E48\u5927\u7684\u57CE\u5E02\u7684\u89D2\u843D\uFF0C\u603B\u9690\u85CF\u7740\u51E0\u5BB6\u6BEB\u4E0D\u8D77\u773C\u7684\u5E97\u94FA\uFF0C\u552E\u5356\u7EB8\u94B1\u3001\u7EB8\u82B1\u3001\u7EB8\u5143\u5B9D\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376856
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0017
+        nextId: line_0018
+        speakerId: 
+        speakerName: 
+        text: "\u6D3B\u4EBA\u4E70\u7ED9\u6B7B\u4EBA\uFF0C\u6B7B\u4EBA\u5B89\u629A\u6D3B\u4EBA\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376857
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0018
+        nextId: line_0019
+        speakerId: 
+        speakerName: 
+        text: "\u8FD9\u53EA\u662F\u8868\u8C61\uFF0C\u5728\u51E1\u4EBA\u770B\u4E0D\u89C1\u7684\u6697\u5904\uFF0C\u603B\u6709\u6D3B\u7740\u7684\u751F\u7075\u88AB\u6614\u65E5\u7684\u9634\u973E\u7ECA\u5012\uFF0C\u5760\u5165\u65E0\u8FB9\u7684\u9ED1\u6697\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376858
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0019
+        nextId: line_0020
+        speakerId: 
+        speakerName: 
+        text: "\u5C06\u4ED6\u4EEC\u300C\u62EF\u6551\u300D\uFF0C\u4FBF\u662F\u6211\u4EEC\u300C\u5B88\u591C\u4EBA\u300D\u7684\u804C\u8D23\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376859
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0020
+        nextId: line_0021
+        speakerId: 
+        speakerName: 
+        text: "\u81EA\u4ECE\u7956\u6BCD\u5E74\u4E8B\u5DF2\u9AD8\uFF0C\u7236\u4EB2\u79BB\u53BB\u4E4B\u540E\uFF0C\u300C\u5B88\u591C\u4EBA\u300D\u7684\u804C\u8D23\u4FBF\u843D\u5230\u4E86\u6211\u7684\u80A9\u4E0A\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376860
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0021
+        nextId: line_0022
+        speakerId: 
+        speakerName: 
+        text: "\u53EF\u662F\u2026\u2026\u7236\u4EB2\uFF0C\u5F53\u521D\u5230\u5E95\u662F\u56E0\u4E3A\u4EC0\u4E48\u79BB\u5F00\u7684\u5462\uFF1F"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376861
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0022
+        nextId: line_0023
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u9EC4\u82B1\u68A8\u6728\u67DC\u53F0\u4E0A\u7684\u4E4C\u9E26\u53EB\u4E86\u4E09\u6B21\u3011"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376862
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0023
+        nextId: line_0024
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u4E0D\u597D\u5566\uFF01\u300C\u4E34\u754C\u300D\u4E2D\u7684\u300C\u6C61\u79FD\u300D\u53C8\u51DD\u805A\u6210\u300C\u6838\u300D\u5566\uFF01\u73B0\u5728\u7684\u5E74\u8F7B\u4EBA\u600E\u4E48\u8FD9\u4E48\u8106\u5F31\uFF0C\u8FDE\u8FD9\u70B9\u6253\u51FB\u90FD\u625B\u4E0D\u4F4F\uFF1F"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376863
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0024
+        nextId: line_0025
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u8C1B\u5B89\u2026\u2026\u54E6\uFF0C\u4E0D\u5BF9\uFF0C\u300C\u65B0\u4EBA\u300D\uFF0C\u8001\u592A\u5A46\u6211\u6D3E\u4E0D\u4E0A\u7528\u573A\u5566\uFF01"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376864
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0025
+        nextId: line_0026
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u77E5\u9053\u4E86\uFF0C\u7956\u6BCD\uFF0C\u6211\u4F1A\u53BB\u7684\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376865
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0026
+        nextId: line_0027
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u8FD9\u53EF\u4E0D\u50CF\u4F60\u7684\u6027\u683C\uFF0C\u8981\u662F\u4E4B\u524D\u7684\u4F60\uFF0C\u80AF\u5B9A\u4E0D\u613F\u610F\u505A\u8FD9\u79CD\u571F\u6389\u7259\u7684\u6D3B\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376866
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0027
+        nextId: line_0028
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u5976\u5976\uFF0C\u4EBA\u662F\u4F1A\u53D8\u7684\uFF0C\u300C\u7075\u72D0\u300D\u5927\u4EBA\u662F\u771F\u7684\u3002\u800C\u4E14\uFF0C\u6211\u6709\u9009\u62E9\u7684\u6743\u5229\u5417\uFF1F"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376867
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0028
+        nextId: line_0029
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u4F60\u5F53\u7136\u53EF\u4EE5\u9009\u62E9\u7ED3\u675F\uFF0C\u56DE\u5230\u81EA\u5DF1\u7684\u4E16\u754C\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376868
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0029
+        nextId: line_0030
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u4F46\u4F60\u65E2\u7136\u51B3\u5B9A\u4E86\uFF0C\u90A3\u8BF7\u8BB0\u5F97\u5E26\u4E0A\u4F60\u7684\u300C\u72D0\u72F8\u9762\u5177\u300D\uFF0C\u300C\u8C01\u77E5\u771F\u9762\u76EE\uFF0C\u906E\u5374\u5728\u541B\u524D\u300D\uFF0C\u53EA\u6709\u5B8C\u5168\u6D88\u5F2D\u6389\u81EA\u5DF1\u7684\u6C14\u606F\uFF0C\u624D\u80FD\u9A97\u8FC7\u90A3\u4E9B\u300C\u795F\u300D\u7684\u9F3B\u5B50\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376869
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0030
+        nextId: line_0031
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u9762\u5177\u5C55\u793A\u52A8\u753B\u3011"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376870
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0031
+        nextId: line_0032
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u5E26\u4E0A\u300C\u72D0\u5343\u9762\u300D\u4E4B\u540E\uFF0C\u53EF\u4EE5\u9A97\u8FC7\u300C\u795F\u300D\u7684\u9F3B\u5B50\u8FDB\u5165\u300C\u4E34\u754C\u300D\uFF0C\u4F46\u662F\u5B83\u4EEC\u7684\u722A\u5B50\u4F9D\u65E7\u5BDF\u89C9\u5F97\u5230\u300C\u4F60\u300D\u8FD9\u4E2A\u300C\u5F02\u7269\u300D\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376871
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0032
+        nextId: line_0033
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u597D\u7684\uFF0C\u5976\u5976\uFF0C\u4F46\u6211\u8BE5\u600E\u4E48\u6D88\u706D\u602A\u7269\u5462\uFF1F\u7528\u9A6C\u25CB\u5965\u90A3\u79CD\u8E29\u6CD5\u5417\uFF1F"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376872
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0033
+        nextId: line_0034
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u4EC0\u4E48\uFF1F\u4E0D\uFF0C\u300C\u795F\u300D\u6E90\u81EA\u4EBA\u7C7B\u7684\u8D1F\u9762\u60C5\u611F\uFF0C\u64C5\u81EA\u6D88\u706D\u592A\u591A\u300C\u795F\u300D\uFF0C\u53EA\u4F1A\u7834\u574F\u9634\u9633\u5E73\u8861\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376873
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0034
+        nextId: line_0035
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u90A3\u6211\u4EEC\u8BE5\u5982\u4F55\u89E3\u51B3\u6240\u8C13\u7684\u300C\u6838\u300D\uFF1F"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376874
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0035
+        nextId: line_0036
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u4E00\u4E2A\u4EBA\u7684\u8D1F\u9762\u60C5\u7EEA\u79EF\u7D2F\u592A\u591A\uFF0C\u5C31\u4F1A\u5728\u300C\u79C1\u4E4B\u754C\u300D\u4EA7\u751F\u300C\u6838\u300D\uFF0C\u5438\u5F15\u592A\u591A\u300C\u795F\u300D\u5230\u4ED6\u7684\u8EAB\u4E0A\uFF0C\u5BFC\u81F4\u81EA\u5DF1\u9677\u5165\u65E0\u6CD5\u9192\u6765\u7684\u6C38\u7720\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376875
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0036
+        nextId: line_0037
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u5E26\u4E0A\u300C\u72D0\u5343\u9762\u300D\uFF0C\u6211\u4F1A\u901A\u8FC7\u300C\u7075\u72D0\u300D\u7ED9\u4F60\u6307\u5F15\uFF0C\u8FDB\u5165\u8FD9\u5B69\u5B50\u7684\u300C\u79C1\u4E4B\u754C\u300D\uFF0C\u62D4\u9664\u4ED6\u7684\u300C\u6838\u300D\uFF0C\u5C06\u5176\u4ECE\u65E0\u5C3D\u7684\u6C38\u7720\u4E2D\u62EF\u6551\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376876
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0037
+        nextId: line_0038
+        speakerId: 
+        speakerName: 
+        text: "\u60F3\u529E\u6CD5\u7ED5\u8FC7\u9762\u524D\u7684\u300C\u795F\u300D\uFF0C\u627E\u5230\u300C\u79C1\u4E4B\u754C\u300D\u4E2D\u7684\u300C\u6838\u300D\u5E76\u5C06\u5176\u62D4\u9664\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376877
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0038
+        nextId: line_0039
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u8FDB\u5165\u5173\u5361\uFF0C\u6211\u5E26\u4E0A\u300C\u72D0\u5343\u9762\u300D\uFF0C\u53D8\u6210\u4E86\u5C11\u5E74\u3011"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376878
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0039
+        nextId: line_0040
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u5947\u602A\uFF1F\u6211\u600E\u4E48\u53D8\u6210\u8FD9\u6837\u5B50\u4E86\uFF1F"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376879
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0040
+        nextId: line_0041
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u4E16\u754C\u5373\u821E\u53F0\uFF0C\u6211\u4EEC\u4E0D\u8FC7\u662F\u5728\u821E\u53F0\u4E0A\u300C\u626E\u6F14\u300D\u67D0\u4E2A\u89D2\u8272\u3002\u8981\u60F3\u63A5\u8FD1\u300C\u79C1\u4E4B\u754C\u300D\u7684\u6700\u6DF1\u5904\uFF0C\u53EA\u80FD\u4F2A\u88C5\u6210\u4ED6\u6700\u4E0D\u63D0\u9632\u7684\u6A21\u6837\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376880
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0041
+        nextId: line_0042
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u552F\u4E00\u76F8\u4FE1\u7684\uFF0C\u53EA\u6709\u81EA\u5DF1\u5417\uFF1F"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376881
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0042
+        nextId: line_0043
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u8BE5\u600E\u4E48\u8BF4\u5462\uFF1F\u611F\u89C9\u8FD8\u771F\u662F\u5B64\u72EC\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376882
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0043
+        nextId: line_0044
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u7EE7\u7EED\u5411\u524D\uFF0C\u60F3\u529E\u6CD5\u901A\u8FC7\u773C\u524D\u7684\u963B\u788D\uFF0C\u5230\u8FBE\u7EC8\u70B9\u62D4\u9664\u300C\u6838\u300D\u3011"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376883
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0044
+        nextId: line_0045
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u6211\u7EE7\u7EED\u5411\u524D\uFF0C\u9047\u89C1\u5C11\u5E74\u7684\u9634\u5F71\u5728\u60AC\u5D16\u524D\u5F98\u5F8A\u3011"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376884
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0045
+        nextId: line_0046
+        speakerId: 
+        speakerName: "\u5C11\u5E74"
+        text: "\u63D0\u9AD8\u4E00\u5206\uFF0C\u5E72\u6389\u5343\u4EBA\u2026\u2026\u7B49\u4E00\u4E0B\uFF0C\u6211\u6BD4\u4E0A\u6B21\u5C11\u800312\u5206\uFF0C\u5C82\u4E0D\u662F\u8981\u88AB12000\u4EBA\u5E72\uFF01"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376885
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0046
+        nextId: line_0047
+        speakerId: 
+        speakerName: "\u6211"
+        text: "\u2026\u2026"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376886
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0047
+        nextId: line_0048
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u7EE7\u7EED\u5411\u524D\uFF0C\u9047\u89C1\u300C\u4EBA\u9762\u602A\u300D\u3011"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376887
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0048
+        nextId: line_0049
+        speakerId: 
+        speakerName: "\u602A\u7269"
+        text: "\u5F00\u4EC0\u4E48\u73A9\u7B11\uFF0C\u4F60\u8FD9\u79CD\u81ED\u866B\uFF0C\u53EA\u914D\u5F85\u5728\u6211\u7684\u978B\u5E95\uFF01"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376888
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0049
+        nextId: line_0050
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u300C\u4EBA\u9762\u602A\u300D\u662F\u5C11\u5E74\u4EA7\u751F\u7684\u591A\u4F59\u7684\u300C\u795F\u300D\uFF0C\u53EF\u4EE5\u5229\u7528\u300C\u7075\u72D0\u4E4B\u529B\u300D\u62D4\u9664\u5B83\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376889
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0050
+        nextId: line_0051
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u7EE7\u7EED\u5411\u524D\uFF0C\u9047\u89C1\u6536\u96C6\u7269\u3011"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376890
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0051
+        nextId: line_0052
+        speakerId: 
+        speakerName: "\u7956\u6BCD"
+        text: "\u522B\u5FD8\u8BB0\u6536\u96C6\u300C\u7075\u754C\u300D\u4E2D\u7684\u300C\u7EAF\u5E01\u300D\uFF0C\u8FD9\u662F\u7EF4\u6301\u9634\u9633\u5E73\u8861\u7684\u5FC5\u8981\u4E3E\u63AA\u3002"
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376891
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_0052
+        nextId: 
+        speakerId: 
+        speakerName: 
+        text: "\u3010\u7EE7\u7EED\u524D\u8FDB\uFF0C\u7ED3\u675F\u5173\u5361\u3011"
+        voiceKey: 
+        expressionKey: 

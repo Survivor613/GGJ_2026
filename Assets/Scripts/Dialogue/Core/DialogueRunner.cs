@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DialogueSystem.Data;
 using DialogueSystem.UI;
 using DialogueSystem.Actors;
@@ -135,6 +136,9 @@ namespace DialogueSystem.Core
                             return;
                         }
                         break;
+                    case "scene":
+                        HandleSceneCommand(parts);
+                        break;
                 }
             }
 
@@ -170,6 +174,45 @@ namespace DialogueSystem.Core
             else if (subAction == "focus")
             {
                 actorController.SetFocus(id);
+            }
+        }
+
+        private void HandleSceneCommand(string[] parts)
+        {
+            if (parts.Length < 2) return;
+            string subAction = parts[1].ToLower();
+
+            var paramsMap = new Dictionary<string, string>();
+            for (int i = 2; i < parts.Length; i++)
+            {
+                string[] kv = parts[i].Split('=');
+                if (kv.Length == 2) paramsMap[kv[0]] = kv[1];
+            }
+
+            if (subAction == "load")
+            {
+                string sceneName = paramsMap.GetValueOrDefault("name");
+                string sceneIndex = paramsMap.GetValueOrDefault("index");
+                string modeValue = paramsMap.GetValueOrDefault("mode", "single");
+                LoadSceneMode mode = modeValue.ToLower() == "additive" ? LoadSceneMode.Additive : LoadSceneMode.Single;
+
+                if (!string.IsNullOrEmpty(sceneName))
+                {
+                    SceneManager.LoadScene(sceneName, mode);
+                }
+                else if (int.TryParse(sceneIndex, out int index))
+                {
+                    SceneManager.LoadScene(index, mode);
+                }
+                else
+                {
+                    Debug.LogWarning("Scene command missing name or index. Example: scene load name=YourScene");
+                }
+            }
+            else if (subAction == "reload")
+            {
+                var activeScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(activeScene.buildIndex);
             }
         }
 
