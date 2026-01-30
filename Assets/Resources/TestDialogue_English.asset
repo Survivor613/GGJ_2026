@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28558ee3be4e94d40af3c6e97810809b, type: 3}
+  m_Name: TestDialogue_English
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 2889082942009376776
+  - rid: 2889082942009376777
+  - rid: 2889082942009376778
+  - rid: 2889082942009376779
+  references:
+    version: 2
+    RefIds:
+    - rid: 2889082942009376776
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: cmd_show_alice
+        nextId: line_1
+        command: actor show id=alice portrait=default x=-200 y=0
+    - rid: 2889082942009376777
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_1
+        nextId: line_2
+        speakerId: alice
+        speakerName: Alice
+        text: Hello![pause=0.3] Welcome to the dialogue system test.
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376778
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_2
+        nextId: line_3
+        speakerId: alice
+        speakerName: Alice
+        text: I can speak [shake=2]very fast![/shake][pause=0.5] Or [spd=0.1]very
+          slowly...[/spd]
+        voiceKey: 
+        expressionKey: 
+    - rid: 2889082942009376779
+      type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        id: line_3
+        nextId: 
+        speakerId: 
+        speakerName: Narrator
+        text: This is a narrator text without character highlight.
+        voiceKey: 
+        expressionKey: 
