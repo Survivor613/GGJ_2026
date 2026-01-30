@@ -72,7 +72,8 @@ public class Player : Entity
     [Header("Respawn details")]
     [SerializeField] public Vector3 respawnLoc;
 
-
+    [Header("Skills Able")]
+    [SerializeField] public bool canAttack;
 
 
 
@@ -204,6 +205,11 @@ public class Player : Entity
     private void OnDisable()
     {
         input.Disable();
+    }
+
+    internal void ApplySpeedPenalty()
+    {
+        moveSpeed *= 0.5f;
     }
 }
 
