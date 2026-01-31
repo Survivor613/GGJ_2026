@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4433347874750682664, guid: 006e65b29864b604bbe40e50a29e17cd, type: 3}
       propertyPath: m_text
-      value: Level_1
+      value: Dialog_1
       objectReference: {fileID: 0}
     - target: {fileID: 5008750872254931565, guid: 006e65b29864b604bbe40e50a29e17cd, type: 3}
       propertyPath: m_SortingLayer
@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6400003376154613647, guid: 006e65b29864b604bbe40e50a29e17cd, type: 3}
       propertyPath: nextLevelName
-      value: Level_1
+      value: Dialog_1
       objectReference: {fileID: 0}
     - target: {fileID: 7300282708230306016, guid: 006e65b29864b604bbe40e50a29e17cd, type: 3}
       propertyPath: m_LocalPosition.x

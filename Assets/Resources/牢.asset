@@ -192,4 +192,4 @@ MonoBehaviour:
     - rid: 2889082959458205820
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
-        command: scene load name=Level_0
+        command: scene Level_0
