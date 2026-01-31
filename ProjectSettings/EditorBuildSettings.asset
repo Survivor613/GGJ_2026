@@ -18,6 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_1.unity
     guid: 9cc3bf8bee729db4d9e4bb69e203ff94
   - enabled: 1
+    path: Assets/Scenes/Dialog_1.unity
+    guid: 51a06c72da3963e4d948c84e21030421
+  - enabled: 1
     path: Assets/Scenes/Level_2.unity
-    guid: 6b1e6d868b28f1147a7da95b79007776
+    guid: 22b8a1b302b3d144e9f58cd6ae540de5
+  - enabled: 1
+    path: Assets/Scenes/Dialog_2.unity
+    guid: 1d9abf123b9cbcd4d878ac4e55238109
+  - enabled: 1
+    path: Assets/Scenes/Dialog_3.unity
+    guid: 4a4791e267a094e468b5bec7c90d827e
   m_configObjects: {}
