@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hazard Ground
   layers:
   - Default
   - TransparentFX
@@ -11,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Breakable Object
+  - Enemy
+  - Box
   - 
   - 
   - 
@@ -40,4 +41,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1518778395
+    locked: 0
+  - name: Ground
+    uniqueID: 1526447953
+    locked: 0
+  - name: Enemy
+    uniqueID: 2614332239
+    locked: 0
+  - name: Object
+    uniqueID: 2150234475
+    locked: 0
+  - name: UI
+    uniqueID: 1192336255
+    locked: 0
+  - name: Text
+    uniqueID: 579629671
+    locked: 0
+  - name: Player
+    uniqueID: 3002357935
     locked: 0

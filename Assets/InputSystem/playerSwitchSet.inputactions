@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "playerSwitchSet",
+    "maps": [
+        {
+            "name": "PlayerSwitch",
+            "id": "0557591c-b0f3-4d2f-8177-0ba769932d8a",
+            "actions": [
+                {
+                    "name": "Switch",
+                    "type": "Button",
+                    "id": "773ae28a-2aa8-4219-8acd-279d8ac0c830",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dee1924b-31f1-40af-b95d-ed44a99bd8a2",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b1330c1-500f-467d-aaa7-f8eb8bcf8aa1",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

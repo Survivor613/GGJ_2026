@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_GroundedState : PlayerState
 {
@@ -39,8 +40,12 @@ public class Player_GroundedState : PlayerState
 
         if (input.Player.Attack.WasPressedThisFrame())
         {
-            stateMachine.ChangeState(player.basicAttackState);
-            return;
+            if (player.canAttack == true)
+            {
+                stateMachine.ChangeState(player.basicAttackState);
+                return;
+
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ public class Entity : MonoBehaviour
 
     [Header("Collision detection")]
     [SerializeField] protected LayerMask whatIsGround;
+    [SerializeField] protected LayerMask whatIsWall;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private float wallCheckDistance;
     //[SerializeField] public float wallCheckDistance { get; private set; } = .4f;
@@ -128,9 +129,9 @@ public class Entity : MonoBehaviour
 
         if (secondaryWallCheck != null)
             wallDetected = Physics2D.Raycast(primaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround)
-                && Physics2D.Raycast(secondaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+                && Physics2D.Raycast(secondaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsWall);
         else
-            wallDetected = Physics2D.Raycast(primaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+            wallDetected = Physics2D.Raycast(primaryWallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsWall);
     }
 
     public bool JumpingAgainstWall() => wallDetected && ((facingDir == -1 && rb.velocity.x < 0) || (facingDir == 1 && rb.velocity.x > 0));
