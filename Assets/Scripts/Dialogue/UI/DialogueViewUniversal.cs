@@ -36,6 +36,13 @@ namespace DialogueSystem.UI
         private void Awake()
         {
             ApplyTextScale();
+            ClearTexts();
+        }
+
+        private void ClearTexts()
+        {
+            if (nameText != null) nameText.text = string.Empty;
+            if (bodyText != null) bodyText.text = string.Empty;
         }
 
         private void OnValidate()

@@ -27,8 +27,11 @@ namespace DialogueSystem.Core
         [Header("Actor Auto Display")]
         [SerializeField] private bool autoShowActors = true;
         [SerializeField] private float commandOverrideSeconds = 1.5f;
+        [Header("UI Control")]
+        [SerializeField] private bool hideDialogueRootObject = true;
         
         private IDialogueView dialogueView;
+        private GameObject dialogueRoot;
 
         private DialogueScriptSO currentScript;
         private DialogueNode currentNode;
@@ -44,6 +47,7 @@ namespace DialogueSystem.Core
             if (dialogueViewComponent != null)
             {
                 dialogueView = dialogueViewComponent as IDialogueView;
+                dialogueRoot = (dialogueViewComponent as Component)?.gameObject;
                 if (dialogueView == null)
                 {
                     Debug.LogError("DialogueView 组件必须实现 IDialogueView 接口！");
@@ -266,6 +270,31 @@ namespace DialogueSystem.Core
             state = RunnerState.Idle;
             dialogueView.Hide();
             Debug.Log("Dialogue Ended");
+        }
+
+        public void HideUI()
+        {
+            dialogueView?.Hide();
+            if (historyView != null)
+            {
+                historyView.Toggle(false);
+            }
+            if (hideDialogueRootObject && dialogueRoot != null)
+            {
+                dialogueRoot.SetActive(false);
+            }
+        }
+
+        public void ShowUI()
+        {
+            if (hideDialogueRootObject && dialogueRoot != null)
+            {
+                dialogueRoot.SetActive(true);
+            }
+            if (dialogueViewComponent != null)
+            {
+                dialogueView = dialogueViewComponent as IDialogueView;
+            }
         }
 
         private void RegisterManualOverride()
