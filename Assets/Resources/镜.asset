@@ -34,6 +34,7 @@ MonoBehaviour:
   - rid: 2889082959458205734
   - rid: 2889082959458205735
   - rid: 2889082959458205736
+  - rid: 2889082959458205821
   references:
     version: 2
     RefIds:
@@ -205,3 +206,7 @@ MonoBehaviour:
         text: "\u3010\u8FDB\u5165\u955C\u9762\u5173\u5361\u3011"
         voiceKey: 
         expressionKey: 
+    - rid: 2889082959458205821
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: scene load name=Level_1

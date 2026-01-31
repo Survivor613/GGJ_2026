@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddd4a8915a5c9243bd809fa73904228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testScript: {fileID: 11400000, guid: 613ef65cb3c5efb47b1153da5216e452, type: 2}
+  testScript: {fileID: 11400000, guid: 19f58be5e192209418e6cdd462c46811, type: 2}
   autoStart: 1
   startDelay: 0.5
   historyToggleKey: 104
@@ -2365,6 +2365,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3768416443594767524, guid: b45fc03387f67a24c8fb5e76902a223d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768416443594767524, guid: b45fc03387f67a24c8fb5e76902a223d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5134743240128744579, guid: b45fc03387f67a24c8fb5e76902a223d, type: 3}
       propertyPath: m_Name
       value: Canvas_DialogueScene
@@ -2448,6 +2456,14 @@ PrefabInstance:
     - target: {fileID: 6576830430867904419, guid: b45fc03387f67a24c8fb5e76902a223d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744384580062202873, guid: b45fc03387f67a24c8fb5e76902a223d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744384580062202873, guid: b45fc03387f67a24c8fb5e76902a223d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

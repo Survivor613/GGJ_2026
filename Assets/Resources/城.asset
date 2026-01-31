@@ -15,7 +15,9 @@ MonoBehaviour:
   nodes:
   - rid: 2889082959458205737
   - rid: 2889082959458205738
+  - rid: 2889082959458205823
   - rid: 2889082959458205739
+  - rid: 2889082959458205824
   - rid: 2889082959458205740
   - rid: 2889082959458205741
   - rid: 2889082959458205742
@@ -39,6 +41,7 @@ MonoBehaviour:
   - rid: 2889082959458205760
   - rid: 2889082959458205761
   - rid: 2889082959458205762
+  - rid: 2889082959458205822
   references:
     version: 2
     RefIds:
@@ -238,7 +241,7 @@ MonoBehaviour:
       type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         speakerId: 
-        speakerName: "\u8C1B\u542C\uFF08\u5C0F\u72D0\u72F8\uFF09"
+        speakerName: "\u8C1B\u542C"
         text: "\u5431\u5431\uFF01"
         voiceKey: 
         expressionKey: 
@@ -246,7 +249,19 @@ MonoBehaviour:
       type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         speakerId: 
-        speakerName: "\u8C1B\u542C\uFF08\u5C0F\u72D0\u72F8\uFF09"
+        speakerName: "\u8C1B\u542C"
         text: "\u6211\u600E\u4E48\u53D8\u6210\u72D0\u72F8\u4E86\uFF1F\u8981\u88AB\u300C\u7075\u72D0\u300D\u593A\u820D\u4E86\uFF01"
         voiceKey: 
         expressionKey: 
+    - rid: 2889082959458205822
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: scene load name=Level_2
+    - rid: 2889082959458205823
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u8C1B\u542C portrait=normal x=-500 y=0"
+    - rid: 2889082959458205824
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=300 y=0"
