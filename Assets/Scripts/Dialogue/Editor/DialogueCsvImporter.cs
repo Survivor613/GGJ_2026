@@ -81,13 +81,11 @@ public class DialogueCsvImporter : EditorWindow
             return;
         }
 
-        // 生成节点并串联 nextId
+        // 生成节点（按列表顺序播放，不使用 id/nextId）
         var script = ScriptableObject.CreateInstance<DialogueScriptSO>();
         for (int i = 0; i < lines.Count; i++)
         {
             var node = lines[i];
-            node.id = $"line_{i + 1:0000}";
-            node.nextId = i < lines.Count - 1 ? $"line_{i + 2:0000}" : "";
             script.nodes.Add(node);
         }
 

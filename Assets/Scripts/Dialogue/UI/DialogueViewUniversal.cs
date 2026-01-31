@@ -14,8 +14,88 @@ namespace DialogueSystem.UI
         [SerializeField] private Text bodyText;  // Unity Text
         [SerializeField] private GameObject continueIcon;
         [SerializeField] private TypewriterEffectUniversal typewriter;
+        [Header("Text Scale")]
+        [Range(0.5f, 3f)]
+        [SerializeField] private float textScale = 1f;
+        [SerializeField] private int nameBaseSize = 28;
+        [SerializeField] private int bodyBaseSize = 24;
+        [SerializeField] private bool applyTextScale = true;
+        [Header("Best Fit")]
+        [SerializeField] private bool nameBestFit = true;
+        [SerializeField] private int nameMinSize = 16;
+        [SerializeField] private int nameMaxSize = 48;
+        [SerializeField] private bool bodyBestFit = false;
+        [SerializeField] private int bodyMinSize = 18;
+        [SerializeField] private int bodyMaxSize = 48;
+        [Header("Auto Resize Rect")]
+        [SerializeField] private bool autoResizeNameRect = true;
+        [SerializeField] private bool autoResizeBodyRect = false;
 
         public bool IsTypewriterPlaying => typewriter != null && typewriter.IsPlaying;
+
+        private void Awake()
+        {
+            ApplyTextScale();
+        }
+
+        private void OnValidate()
+        {
+            ApplyTextScale();
+        }
+
+        private void ApplyTextScale()
+        {
+            if (nameText != null)
+            {
+                if (applyTextScale)
+                {
+                    nameText.fontSize = Mathf.Max(1, Mathf.RoundToInt(nameBaseSize * Mathf.Max(0.5f, textScale)));
+                }
+                nameText.enabled = true;
+                nameText.gameObject.SetActive(true);
+                nameText.resizeTextForBestFit = nameBestFit;
+                nameText.resizeTextMinSize = Mathf.Max(1, nameMinSize);
+                nameText.resizeTextMaxSize = Mathf.Max(nameText.resizeTextMinSize, nameMaxSize);
+                nameText.horizontalOverflow = HorizontalWrapMode.Wrap;
+                nameText.verticalOverflow = VerticalWrapMode.Truncate;
+
+                if (autoResizeNameRect)
+                {
+                    ResizeRectToText(nameText);
+                }
+            }
+            if (bodyText != null)
+            {
+                if (applyTextScale)
+                {
+                    bodyText.fontSize = Mathf.Max(1, Mathf.RoundToInt(bodyBaseSize * Mathf.Max(0.5f, textScale)));
+                }
+                bodyText.enabled = true;
+                bodyText.gameObject.SetActive(true);
+                bodyText.resizeTextForBestFit = bodyBestFit;
+                bodyText.resizeTextMinSize = Mathf.Max(1, bodyMinSize);
+                bodyText.resizeTextMaxSize = Mathf.Max(bodyText.resizeTextMinSize, bodyMaxSize);
+                bodyText.horizontalOverflow = HorizontalWrapMode.Wrap;
+                bodyText.verticalOverflow = VerticalWrapMode.Truncate;
+
+                if (autoResizeBodyRect)
+                {
+                    ResizeRectToText(bodyText);
+                }
+            }
+        }
+
+        private void ResizeRectToText(Text text)
+        {
+            if (text == null) return;
+            RectTransform rect = text.rectTransform;
+            if (rect == null) return;
+
+            float preferredHeight = text.preferredHeight;
+            Vector2 size = rect.sizeDelta;
+            size.y = Mathf.Max(1f, preferredHeight);
+            rect.sizeDelta = size;
+        }
 
         public void ShowLine(string speaker, string text)
         {

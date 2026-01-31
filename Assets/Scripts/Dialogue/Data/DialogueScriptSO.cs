@@ -7,8 +7,6 @@ namespace DialogueSystem.Data
     [Serializable]
     public abstract class DialogueNode
     {
-        public string id;
-        public string nextId;
     }
 
     [Serializable]
@@ -33,10 +31,5 @@ namespace DialogueSystem.Data
     {
         [SerializeReference]
         public List<DialogueNode> nodes = new List<DialogueNode>();
-
-        public DialogueNode GetNode(string id)
-        {
-            return nodes.Find(n => n.id == id);
-        }
     }
 }

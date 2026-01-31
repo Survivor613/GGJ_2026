@@ -21,6 +21,7 @@ namespace DialogueSystem.UI
         
         private Coroutine typewriterCoroutine;
         private float currentSpeed;
+        private string currentRawText;
         
         // Simple tag regex
         private static readonly Regex tagRegex = new Regex(@"\[(/?[a-zA-Z]+)(?:=([^\]]+))?\]");
@@ -28,6 +29,7 @@ namespace DialogueSystem.UI
         public void Play(string rawText)
         {
             Stop();
+            currentRawText = rawText;
             typewriterCoroutine = StartCoroutine(TypewriterRoutine(rawText));
         }
 
@@ -48,7 +50,7 @@ namespace DialogueSystem.UI
             Stop();
             
             // Remove control tags but keep color tags
-            string cleanText = tagRegex.Replace(textComponent.text, match =>
+            string cleanText = tagRegex.Replace(currentRawText ?? string.Empty, match =>
             {
                 string tagName = match.Groups[1].Value.ToLower();
                 // Keep color tags for Unity Text

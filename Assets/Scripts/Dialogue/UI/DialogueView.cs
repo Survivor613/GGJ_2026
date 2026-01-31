@@ -11,8 +11,39 @@ namespace DialogueSystem.UI
         [SerializeField] private TMP_Text bodyText;
         [SerializeField] private GameObject continueIcon;
         [SerializeField] private TypewriterEffect typewriter;
+        [Header("Text Scale")]
+        [Range(0.5f, 3f)]
+        [SerializeField] private float textScale = 1f;
+        [SerializeField] private float nameBaseSize = 28f;
+        [SerializeField] private float bodyBaseSize = 24f;
 
         public bool IsTypewriterPlaying => typewriter.IsPlaying;
+
+        private void Awake()
+        {
+            ApplyTextScale();
+        }
+
+        private void OnValidate()
+        {
+            ApplyTextScale();
+        }
+
+        private void ApplyTextScale()
+        {
+            if (nameText != null)
+            {
+                nameText.fontSize = Mathf.Max(1f, nameBaseSize * Mathf.Max(0.5f, textScale));
+                nameText.enabled = true;
+                nameText.gameObject.SetActive(true);
+            }
+            if (bodyText != null)
+            {
+                bodyText.fontSize = Mathf.Max(1f, bodyBaseSize * Mathf.Max(0.5f, textScale));
+                bodyText.enabled = true;
+                bodyText.gameObject.SetActive(true);
+            }
+        }
 
         public void ShowLine(string speaker, string text)
         {
