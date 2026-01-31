@@ -20,7 +20,8 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.PlayBGM(musicGroupName);
         newFadeUI.DoNewFadeIn();
 
-        if (SceneManager.GetActiveScene().name == "Level_0")
+        if (SceneManager.GetActiveScene().name == "Level_0"
+            || SceneManager.GetActiveScene().name == "Level_1")
             player.canAttack = true;
         else
             player.canAttack = false;

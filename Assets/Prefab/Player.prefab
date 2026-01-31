@@ -201,7 +201,7 @@ MonoBehaviour:
   attackVeclocityDuration: 0.1
   comboResetTime: 1
   moveSpeed: 4
-  jumpForce: 10
+  jumpForce: 12
   wallJumpForce: {x: 4, y: 8}
   wallJumpInputLockDuration: 0.12
   jumpCoyoteDuration: 0.2
@@ -213,6 +213,7 @@ MonoBehaviour:
   dashCoolDown: 1
   respawnLoc: {x: -112, y: 0, z: 0}
   canAttack: 0
+  isControlled: 1
 --- !u!114 &316820501037893575
 MonoBehaviour:
   m_ObjectHideFlags: 0

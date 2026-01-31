@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : Entity
@@ -74,6 +75,9 @@ public class Player : Entity
 
     [Header("Skills Able")]
     [SerializeField] public bool canAttack;
+
+    [Header("Double Player")]
+    [SerializeField] public bool isControlled = true;
 
 
 
@@ -205,6 +209,14 @@ public class Player : Entity
     private void OnDisable()
     {
         input.Disable();
+    }
+
+    public void SwitchInputState()
+    {
+        if (isControlled)
+            input.Enable();
+        else
+            input.Disable();
     }
 
     internal void ApplySpeedPenalty()
