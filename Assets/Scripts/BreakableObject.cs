@@ -20,11 +20,11 @@ public class BreakableTilemap : MonoBehaviour, IDamagable
             tilemap.SetTile(cellPos, null);
 
             // 惩罚逻辑
-            Player player = damageDealer.GetComponent<Player>();
-            if (player != null)
-            {
-                player.ApplySpeedPenalty();
-            }
+            //Player player = damageDealer.GetComponent<Player>();
+            //if (player != null)
+            //{
+            //    player.ApplySpeedPenalty();
+            //}
 
             // 视觉反馈优化：在瓦片中心生成特效，而不是在 Player 手上
             //Vector3 tileWorldPos = tilemap.GetCellCenterWorld(cellPos);

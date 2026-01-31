@@ -137,8 +137,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0063678026, y: 0.05730751}
-  m_Size: {x: 0.5127356, y: 0.9235899}
+  m_Offset: {x: 0.035778046, y: -0.008047521}
+  m_Size: {x: 0.6957321, y: 1.2569002}
   m_Direction: 0
 --- !u!50 &3607545124714286383
 Rigidbody2D:
@@ -187,7 +187,7 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckDistance: 0.42
+  groundCheckDistance: 0.7
   wallCheckDistance: 0.28
   primaryWallCheck: {fileID: 5501872857514558986}
   secondaryWallCheck: {fileID: 0}
@@ -396,7 +396,7 @@ SpriteRenderer:
   m_SortingLayerID: -1292609361
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34973c060353fed4eb951c516cf01dd3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a50e92d31286e9443ba84d44a113cd1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
