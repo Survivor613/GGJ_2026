@@ -1,0 +1,190 @@
+[1mdiff --git a/Assets/Animation/AnimatorControllers/Player.controller b/Assets/Animation/AnimatorControllers/Player.controller[m
+[1mindex c9a7f17..8f1f950 100644[m
+[1m--- a/Assets/Animation/AnimatorControllers/Player.controller[m
+[1m+++ b/Assets/Animation/AnimatorControllers/Player.controller[m
+[36m@@ -408,18 +408,6 @@[m [mAnimatorController:[m
+     m_DefaultInt: 0[m
+     m_DefaultBool: 0[m
+     m_Controller: {fileID: 9100000}[m
+[31m-  - m_Name: counterAttack[m
+[31m-    m_Type: 4[m
+[31m-    m_DefaultFloat: 0[m
+[31m-    m_DefaultInt: 0[m
+[31m-    m_DefaultBool: 0[m
+[31m-    m_Controller: {fileID: 9100000}[m
+[31m-  - m_Name: counterAttackPerformed[m
+[31m-    m_Type: 4[m
+[31m-    m_DefaultFloat: 0[m
+[31m-    m_DefaultInt: 0[m
+[31m-    m_DefaultBool: 0[m
+[31m-    m_Controller: {fileID: 9100000}[m
+   m_AnimatorLayers:[m
+   - serializedVersion: 5[m
+     m_Name: Base Layer[m
+[1mdiff --git a/Assets/Scenes/Level_3.unity.meta b/Assets/Animation/Fox.meta[m
+[1msimilarity index 67%[m
+[1mrename from Assets/Scenes/Level_3.unity.meta[m
+[1mrename to Assets/Animation/Fox.meta[m
+[1mindex 52c1e9f..1093330 100644[m
+[1m--- a/Assets/Scenes/Level_3.unity.meta[m
+[1m+++ b/Assets/Animation/Fox.meta[m
+[36m@@ -1,5 +1,6 @@[m
+ fileFormatVersion: 2[m
+[31m-guid: cc842b0adabc0cb45b3ddf14549d7ea6[m
+[32m+[m[32mguid: 436f122be0d842c4387bd26313c2b955[m
+[32m+[m[32mfolderAsset: yes[m
+ DefaultImporter:[m
+   externalObjects: {}[m
+   userData: [m
+[1mdiff --git a/Assets/Animation/Fox/Fox.controller b/Assets/Animation/Fox/Fox.controller[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b7bcc98[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Animation/Fox/Fox.controller[m
+[36m@@ -0,0 +1,787 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!1101 &-9004509714024044678[m
+[32m+[m[32mAnimatorStateTransition:[m
+[32m+[m[32m  m_ObjectHideFlags: 1[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_Name:[m[41m [m
+[32m+[m[32m  m_Conditions:[m
+[32m+[m[32m  - m_ConditionMode: 2[m
+[32m+[m[32m    m_ConditionEvent: move[m
+[32m+[m[32m    m_EventTreshold: 0[m
+[32m+[m[32m  m_DstStateMachine: {fileID: 0}[m
+[32m+[m[32m  m_DstState: {fileID: 0}[m
+[32m+[m[32m  m_Solo: 0[m
+[32m+[m[32m  m_Mute: 0[m
+[32m+[m[32m  m_IsExit: 1[m
+[32m+[m[32m  serializedVersion: 3[m
+[32m+[m[32m  m_TransitionDuration: 0[m
+[32m+[m[32m  m_TransitionOffset: 0[m
+[32m+[m[32m  m_ExitTime: 0.75[m
+[32m+[m[32m  m_HasExitTime: 0[m
+[32m+[m[32m  m_HasFixedDuration: 1[m
+[32m+[m[32m  m_InterruptionSource: 0[m
+[32m+[m[32m  m_OrderedInterruption: 1[m
+[32m+[m[32m  m_CanTransitionToSelf: 1[m
+[32m+[m[32m--- !u!1107 &-8111072916439081342[m
+[32m+[m[32mAnimatorStateMachine:[m
+[32m+[m[32m  serializedVersion: 6[m
+[32m+[m[32m  m_ObjectHideFlags: 1[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_Name: BasicAttack[m
+[32m+[m[32m  m_ChildStates:[m
+[32m+[m[32m  - serializedVersion: 1[m
+[32m+[m[32m    m_State: {fileID: -7368011017680546378}[m
+[32m+[m[32m    m_Position: {x: 580, y: 0, z: 0}[m
+[32m+[m[32m  - serializedVersion: 1[m
+[32m+[m[32m    m_State: {fileID: 3922349167284115952}[m
+[32m+[m[32m    m_Position: {x: 590, y: 110, z: 0}[m
+[32m+[m[32m  - serializedVersion: 1[m
+[32m+[m[32m    m_State: {fileID: -4719775406699017329}[m
+[32m+[m[32m    m_Position: {x: 590, y: 220, z: 0}[m
+[32m+[m[32m  - serializedVersion: 1[m
+[32m+[m[32m    m_State: {fileID: -6080269382959119612}[m
+[32m+[m[32m    m_Position: {x: 300, y: 120, z: 0}[m
+[32m+[m[32m  m_ChildStateMachines: [][m
+[32m+[m[32m  m_AnyStateTransitions: [][m
+[32m+[m[32m  m_EntryTransitions: [][m
+[32m+[m[32m  m_StateMachineTransitions: {}[m
+[32m+[m[32m  m_StateMachineBehaviours: [][m
+[32m+[m[32m  m_AnyStatePosition: {x: 50, y: 20, z: 0}[m
+[32m+[m[32m  m_EntryPosition: {x: 50, y: 120, z: 0}[m
+[32m+[m[32m  m_ExitPosition: {x: 900, y: 120, z: 0}[m
+[32m+[m[32m  m_ParentStateMachinePosition: {x: 850, y: -50, z: 0}[m
+[32m+[m[32m  m_DefaultState: {fileID: -6080269382959119612}[m
+[32m+[m[32m--- !u!1109 &-7622941077614737271[m
+[32m+[m[32mAnimatorTransition:[m
+[32m+[m[32m  m_ObjectHideFlags: 1[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_Name:[m[41m [m
+[32m+[m[32m  m_Conditions:[m
+[32m+[m[32m  - m_ConditionMode: 1[m
+[32m+[m[32m    m_ConditionEvent: dash[m
+[32m+[m[32m    m_EventTreshold: 0[m
+[32m+[m[32m  m_DstStateMachine: {fileID: 0}[m
+[32m+[m[32m  m_DstState: {fileID: 1156775701294004657}[m
+[32m+[m[32m  m_Solo: 0[m
+[32m+[m[32m  m_Mute: 0[m
+[32m+[m[32m  m_IsExit: 0[m
+[32m+[m[32m  serializedVersion: 1[m
+[32m+[m[32m--- !u!1102 &-7368011017680546378[m
+[32m+[m[32mAnimatorState:[m
+[32m+[m[32m  serializedVersion: 6[m
+[32m+[m[32m  m_ObjectHideFlags: 1[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_Name: playerBasicAttack_1[m
+[32m+[m[32m  m_Speed: 1[m
+[32m+[m[32m  m_CycleOffset: 0[m
+[32m+[m[32m  m_Transitions:[m
+[32m+[m[32m  - {fileID: -3721342656065663484}[m
+[32m+[m[32m  m_StateMachineBehaviours: [][m
+[32m+[m[32m  m_Position: {x: 50, y: 50, z: 0}[m
+[32m+[m[32m  m_IKOnFeet: 0[m
+[32m+[m[32m  m_WriteDefaultValues: 1[m
+[32m+[m[32m  m_Mirror: 0[m
+[32m+[m[32m  m_SpeedParameterActive: 0[m
+[32m+[m[32m  m_MirrorParameterActive: 0[m
+[32m+[m[32m  m_CycleOffsetParameterActive: 0[m
+[32m+[m[32m  m_TimeParameterActive: 0[m
+[32m+[m[32m  m_Motion: {fileID: 7400000, guid: efb51c2b101777745b38beaa280d0536, type: 2}[m
+[32m+[m[32m  m_Tag:[m[41m [m
+[32m+[m[32m  m_SpeedParameter:[m[41m [m
+[32m+[m[32m  m_MirrorParameter:[m[41m [m
+[32m+[m[32m  m_CycleOffsetParameter:[m[41m [m
+[32m+[m[32m  m_TimeParameter:[m[41m [m
+[32m+[m[32m--- !u!1101 &-7280931099413218572[m
+[32m+[m[32mAnimatorStateTransition:[m
+[32m+[m[32m  m_ObjectHideFlags: 1[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_Name:[m[41m [m
+[32m+[m[32m  m_Conditions:[m
+[32m+[m[32m  - m_ConditionMode: 6[m
+[32m+[m[32m    m_ConditionEvent: basicAttackIndex[m
+[32m+[m[32m    m_EventTreshold: 2[m
+[32m+[m[32m  m_DstStateMachine: {fileID: 0}[m
+[32m+[m[32m  m_DstState: {fileID: 3922349167284115952}[m
+[32m+[m[32m  m_Solo: 0[m
+[32m+[m[32m  m_Mute: 0[m
+[32m+[m[32m  m_IsExit: 0[m
+[32m+[m[32m  serializedVersion: 3[m
+[32m+[m[32m  m_TransitionDuration: 0[m
+[32m+[m[32m  m_TransitionOffset: 0[m
+[32m+[m[32m  m_ExitTime: 0.75[m
+[32m+[m[32m  m_HasExitTime: 0[m
+[32m+[m[32m  m_HasFixedDuration: 1[m
+[32m+[m[32m  m_InterruptionSource: 0[m
+[32m+[m[32m  m_OrderedInterruption: 1[m
+[32m+[m[32m  m_CanTransitionToSelf: 1[m
+[32m+[m[32m--- !u!1101 &-6850623300171364649[m
+[32m+[m[32mAnimatorStateTransition:[m
+[32m+[m[32m  m_ObjectHideFlags: 1[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_Name:[m[41m [m
+[32m+[m[32m  m_Conditions:[m
+[32m+[m[32m  - m_ConditionMode: 2[m
+[32m+[m[32m    m_ConditionEvent: jumpFall[m
+[32m+[m[32m    m_EventTreshold: 0[m
+[32m+[m[32m  m_DstStateMachine: {fileID: 0}[m
+[32m+[m[32m  m_DstState: {fileID: 0}[m
+[32m+[m[32m  m_Solo: 0[m
+[32m+[m[32m  m_Mute: 0[m
+[32m+[m[32m  m_IsExit: 1[m
+[32m+[m[32m  serializedVersion: 3[m
+[32m+[m[32m  m_TransitionDuration: 0[m
+[32m+

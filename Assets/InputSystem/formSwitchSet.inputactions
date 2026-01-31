@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "formSwitchSet",
+    "maps": [
+        {
+            "name": "FormSwitch",
+            "id": "3cff3545-110c-4aaf-b509-04bb84fab714",
+            "actions": [
+                {
+                    "name": "Switch",
+                    "type": "Button",
+                    "id": "9c1e6298-d2fe-4517-98e5-0c95989c739b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3d6e5daf-bbd0-4a24-83dc-99a93c35076c",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd29a6ad-8268-4f78-811b-6bba8098b88d",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

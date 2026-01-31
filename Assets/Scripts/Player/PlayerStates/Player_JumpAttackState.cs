@@ -25,7 +25,7 @@ public class Player_JumpAttackState : PlayerState
         if (player.groundDetected && touchedGround == false)
         {
             touchedGround = true;
-            anim.SetTrigger("jumpAttackTrigger");
+            SafeSetTrigger("jumpAttackTrigger");
             player.SetVelocity(0, rb.velocity.y);
         }
 

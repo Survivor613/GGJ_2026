@@ -14,7 +14,7 @@ public class Player_FallState : Player_AiredState
     public override void Enter()
     {
         base.Enter();
-        anim.SetBool("jumpFall", true);
+        SafeSetBool("jumpFall", true);
         isHeavyFall = false;
     }
 

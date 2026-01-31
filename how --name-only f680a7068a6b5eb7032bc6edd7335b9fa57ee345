@@ -1,0 +1,129 @@
+[33mcommit f680a7068a6b5eb7032bc6edd7335b9fa57ee345[m
+Merge: 0d0e53a 868f4d3
+Author: AndroidRadish <823049825@qq.com>
+Date:   Fri Jan 30 18:49:47 2026 +0800
+
+    On main: !!GitHub_Desktop<main>
+
+[33mcommit 868f4d36def41c24e6af84c9198b5873243bf1f2[m
+Author: AndroidRadish <823049825@qq.com>
+Date:   Fri Jan 30 18:49:47 2026 +0800
+
+    index on main: 0d0e53a Initial commit
+
+[33mcommit 0d0e53a0e9172b5bccee59e815b96499fb345575[m
+Author: Survivor613 <fantingshuo@qq.com>
+Date:   Fri Jan 30 18:37:10 2026 +0800
+
+    Initial commit
+
+ .gitignore                                         |   45 [32m+[m
+ Assets/Animation.meta                              |    8 [32m+[m
+ Assets/Animation/AnimatorControllers.meta          |    8 [32m+[m
+ .../Animation/AnimatorControllers/Chest.controller |  133 [32m+[m
+ .../AnimatorControllers/Chest.controller.meta      |    8 [32m+[m
+ .../AnimatorControllers/Enemy_Skeleton.controller  |  398 [32m+[m
+ .../Enemy_Skeleton.controller.meta                 |    8 [32m+[m
+ .../AnimatorControllers/Golden_Skull.controller    |   72 [32m+[m
+ .../Golden_Skull.controller.meta                   |    8 [32m+[m
+ .../Animation/AnimatorControllers/Key.controller   |   72 [32m+[m
+ .../AnimatorControllers/Key.controller.meta        |    8 [32m+[m
+ .../Animation/AnimatorControllers/Palm.controller  |   72 [32m+[m
+ .../AnimatorControllers/Palm.controller.meta       |    8 [32m+[m
+ .../AnimatorControllers/Player.controller          | 1040 [32m+++[m
+ .../AnimatorControllers/Player.controller.meta     |    8 [32m+[m
+ .../AnimatorControllers/UI_NewFade.controller      |  165 [32m+[m
+ .../AnimatorControllers/UI_NewFade.controller.meta |    8 [32m+[m
+ .../AnimatorControllers/VFX_OnHit.controller       |  101 [32m+[m
+ .../AnimatorControllers/VFX_OnHit.controller.meta  |    8 [32m+[m
+ Assets/Animation/Chest.meta                        |    8 [32m+[m
+ Assets/Animation/Chest/chestIdle.anim              |   72 [32m+[m
+ Assets/Animation/Chest/chestIdle.anim.meta         |    8 [32m+[m
+ Assets/Animation/Chest/chestOpen.anim              |   84 [32m+[m
+ Assets/Animation/Chest/chestOpen.anim.meta         |    8 [32m+[m
+ Assets/Animation/Golden_Skull.meta                 |    8 [32m+[m
+ Assets/Animation/Golden_Skull/keySpin.anim         |   93 [32m+[m
+ Assets/Animation/Golden_Skull/keySpin.anim.meta    |    8 [32m+[m
+ Assets/Animation/Golden_Skull/skullSpin.anim       |   93 [32m+[m
+ Assets/Animation/Golden_Skull/skullSpin.anim.meta  |    8 [32m+[m
+ Assets/Animation/Palm.meta                         |    8 [32m+[m
+ Assets/Animation/Palm/palmIdle.anim                |   81 [32m+[m
+ Assets/Animation/Palm/palmIdle.anim.meta           |    8 [32m+[m
+ Assets/Animation/Player.meta                       |    8 [32m+[m
+ Assets/Animation/Player/playerBasicAttack_1.anim   |   92 [32m+[m
+ .../Animation/Player/playerBasicAttack_1.anim.meta |    8 [32m+[m
+ Assets/Animation/Player/playerBasicAttack_2.anim   |   92 [32m+[m
+ .../Animation/Player/playerBasicAttack_2.anim.meta |    8 [32m+[m
+ Assets/Animation/Player/playerBasicAttack_3.anim   |   92 [32m+[m
+ .../Animation/Player/playerBasicAttack_3.anim.meta |    8 [32m+[m
+ Assets/Animation/Player/playerDash.anim            |   81 [32m+[m
+ Assets/Animation/Player/playerDash.anim.meta       |    8 [32m+[m
+ Assets/Animation/Player/playerDead.anim            |  109 [32m+[m
+ Assets/Animation/Player/playerDead.anim.meta       |    8 [32m+[m
+ Assets/Animation/Player/playerFall.anim            |   72 [32m+[m
+ Assets/Animation/Player/playerFall.anim.meta       |    8 [32m+[m
+ Assets/Animation/Player/playerIdle.anim            |   84 [32m+[m
+ Assets/Animation/Player/playerIdle.anim.meta       |    8 [32m+[m
+ Assets/Animation/Player/playerJump.anim            |   78 [32m+[m
+ Assets/Animation/Player/playerJump.anim.meta       |    8 [32m+[m
+ Assets/Animation/Player/playerJumpAttack.anim      |   72 [32m+[m
+ Assets/Animation/Player/playerJumpAttack.anim.meta |    8 [32m+[m
+ .../Player/playerJumpAttack_performed.anim         |   89 [32m+[m
+ .../Player/playerJumpAttack_performed.anim.meta    |    8 [32m+[m
+ Assets/Animation/Player/playerMove.anim            |   87 [32m+[m
+ Assets/Animation/Player/playerMove.anim.meta       |    8 [32m+[m
+ Assets/Animation/Player/playerWallSlide.anim       |   84 [32m+[m
+ Assets/Animation/Player/playerWallSlide.anim.meta  |    8 [32m+[m
+ Assets/Animation/Skeleton.meta                     |    8 [32m+[m
+ Assets/Animation/Skeleton/skeletonAttack.anim      |  119 [32m+[m
+ Assets/Animation/Skeleton/skeletonAttack.anim.meta |    8 [32m+[m
+ Assets/Animation/Skeleton/skeletonIdle.anim        |   96 [32m+[m
+ Assets/Animation/Skeleton/skeletonIdle.anim.meta   |    8 [32m+[m
+ Assets/Animation/Skeleton/skeletonMove.anim        |   93 [32m+[m
+ Assets/Animation/Skeleton/skeletonMove.anim.meta   |    8 [32m+[m
+ Assets/Animation/UI_NewFade.meta                   |    8 [32m+[m
+ Assets/Animation/UI_NewFade/UI_NewFadeIn.anim      |  264 [32m+[m
+ Assets/Animation/UI_NewFade/UI_NewFadeIn.anim.meta |    8 [32m+[m
+ Assets/Animation/UI_NewFade/UI_NewFadeOut.anim     |  227 [32m+[m
+ .../Animation/UI_NewFade/UI_NewFadeOut.anim.meta   |    8 [32m+[m
+ Assets/Animation/VFX.meta                          |    8 [32m+[m
+ Assets/Animation/VFX/vfxOnHit_01.anim              |   84 [32m+[m
+ Assets/Animation/VFX/vfxOnHit_01.anim.meta         |    8 [32m+[m
+ Assets/Animation/VFX/vfxOnHit_02.anim              |   90 [32m+[m
+ Assets/Animation/VFX/vfxOnHit_02.anim.meta         |    8 [32m+[m
+ Assets/Audio.meta                                  |    8 [32m+[m
+ Assets/Audio/BGM.meta                              |    8 [32m+[m
+ Assets/Audio/BGM/music tropical.mp3                |  Bin [31m0[m -> [32m1930706[m bytes
+ Assets/Audio/BGM/music tropical.mp3.meta           |   23 [32m+[m
+ Assets/Audio/SFX.meta                              |    8 [32m+[m
+ Assets/Audio/SFX/button_click.wav                  |  Bin [31m0[m -> [32m118336[m bytes
+ Assets/Audio/SFX/button_click.wav.meta             |   23 [32m+[m
+ Assets/Audio/SFX/fade_in.mp3                       |  Bin [31m0[m -> [32m59520[m bytes
+ Assets/Audio/SFX/fade_in.mp3.meta                  |   23 [32m+[m
+ Assets/Audio/SFX/fade_out.mp3                      |  Bin [31m0[m -> [32m75840[m bytes
+ Assets/Audio/SFX/fade_out.mp3.meta                 |   23 [32m+[m
+ Assets/Audio/sword whoosh.mp3                      |  Bin [31m0[m -> [32m6096[m bytes
+ Assets/Audio/sword whoosh.mp3.meta                 |   23 [32m+[m
+ Assets/Data.meta                                   |    8 [32m+[m
+ Assets/Data/AUDIO DATABASE.asset                   |  101 [32m+[m
+ Assets/Data/AUDIO DATABASE.asset.meta              |    8 [32m+[m
+ Assets/Font.meta                                   |    8 [32m+[m
+ Assets/Font/NerkoOne-Regular SDF.asset             | 2705 [32m+++++++[m
+ Assets/Font/NerkoOne-Regular SDF.asset.meta        |    8 [32m+[m
+ Assets/InputSystem.meta                            |    8 [32m+[m
+ Assets/InputSystem/playerInputSet.cs               |  704 [32m++[m
+ Assets/InputSystem/playerInputSet.cs.meta          |   11 [32m+[m
+ Assets/InputSystem/playerInputSet.inputactions     |  255 [32m+[m
+ .../InputSystem/playerInputSet.inputactions.meta   |   14 [32m+[m
+ Assets/Material.meta                               |    8 [32m+[m
+ Assets/Material/OnDamageVFX_Material.mat           |   49 [32m+[m
+ Assets/Material/OnDamageVFX_Material.mat.meta      |    8 [32m+[m
+ Assets/Material/Slippy_Material.physicsMaterial2D  |   11 [32m+[m
+ .../Slippy_Material.physicsMaterial2D.meta         |    8 [32m+[m
+ Assets/Prefab.meta                                 |    8 [32m+[m
+ Assets/Prefab/OnHitVFX.prefab                      |  161 [32m+[m
+ Assets/Prefab/OnHitVFX.prefab.meta                 |    7 [32m+[m
+ Assets/Prefab/UI_NewFade.prefab                    |  286 [32m+[m
+ Assets/Prefab/UI_NewFade.prefab.meta               |    7 [32m+[m
+ Assets/Resources.meta                              |    8 [32m+[m
+ Assets/Res
