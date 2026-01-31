@@ -17,39 +17,31 @@ public class DialogueTestDataCreator : EditorWindow
         // 添加命令节点：显示角色
         var cmd1 = new CommandNode
         {
-            id = "cmd_show_alice",
             command = "actor show id=alice portrait=default x=-200 y=0",
-            nextId = "line_1"
         };
         
         // 添加对话节点1
         var line1 = new LineNode
         {
-            id = "line_1",
             speakerId = "alice",
             speakerName = "爱丽丝",
             text = "你好！[pause=0.3]欢迎来到对话系统测试。",
-            nextId = "line_2"
         };
         
         // 添加对话节点2：带特效
         var line2 = new LineNode
         {
-            id = "line_2",
             speakerId = "alice",
             speakerName = "爱丽丝",
             text = "我可以说话[shake=2]很快！[/shake][pause=0.5]或者[spd=0.1]说得很慢...[/spd]",
-            nextId = "line_3"
         };
         
         // 添加对话节点3：旁白
         var line3 = new LineNode
         {
-            id = "line_3",
             speakerId = "",
             speakerName = "旁白",
             text = "这是一段旁白文字，没有角色高亮。",
-            nextId = ""
         };
         
         dialogueScript.nodes.Add(cmd1);

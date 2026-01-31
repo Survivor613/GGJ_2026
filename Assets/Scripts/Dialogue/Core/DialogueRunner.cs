@@ -24,12 +24,20 @@ namespace DialogueSystem.Core
         [SerializeField] private MonoBehaviour dialogueViewComponent; // 可以是 DialogueView 或 DialogueViewUniversal
         [SerializeField] private ActorController actorController;
         [SerializeField] private HistoryView historyView;
+        [Header("Actor Auto Display")]
+        [SerializeField] private bool autoShowActors = true;
+        [SerializeField] private float commandOverrideSeconds = 1.5f;
+        [Header("UI Control")]
+        [SerializeField] private bool hideDialogueRootObject = true;
         
         private IDialogueView dialogueView;
+        private GameObject dialogueRoot;
 
         private DialogueScriptSO currentScript;
         private DialogueNode currentNode;
+        private int currentIndex = -1;
         private RunnerState state = RunnerState.Idle;
+        private float manualOverrideUntil;
 
         private void Awake()
         {
@@ -39,6 +47,7 @@ namespace DialogueSystem.Core
             if (dialogueViewComponent != null)
             {
                 dialogueView = dialogueViewComponent as IDialogueView;
+                dialogueRoot = (dialogueViewComponent as Component)?.gameObject;
                 if (dialogueView == null)
                 {
                     Debug.LogError("DialogueView 组件必须实现 IDialogueView 接口！");
@@ -49,25 +58,29 @@ namespace DialogueSystem.Core
         public void StartDialogue(DialogueScriptSO script, string startNodeId = "")
         {
             currentScript = script;
-            string id = string.IsNullOrEmpty(startNodeId) && script.nodes.Count > 0 ? script.nodes[0].id : startNodeId;
-            PlayNode(id);
+            if (!string.IsNullOrEmpty(startNodeId))
+            {
+                Debug.LogWarning("已启用按列表顺序播放，对话脚本不再使用 id/nextId。startNodeId 将被忽略。");
+            }
+            currentIndex = 0;
+            PlayNodeAtIndex(currentIndex);
         }
 
-        public void PlayNode(string id)
+        public void PlayNodeAtIndex(int index)
         {
-            if (string.IsNullOrEmpty(id))
+            if (currentScript == null || currentScript.nodes == null || currentScript.nodes.Count == 0)
             {
                 EndDialogue();
                 return;
             }
 
-            currentNode = currentScript.GetNode(id);
-            if (currentNode == null)
+            if (index < 0 || index >= currentScript.nodes.Count)
             {
-                Debug.LogError($"Node {id} not found in script.");
                 EndDialogue();
                 return;
             }
+
+            currentNode = currentScript.nodes[index];
 
             if (currentNode is LineNode lineNode)
             {
@@ -83,18 +96,25 @@ namespace DialogueSystem.Core
         {
             state = RunnerState.PlayingLine;
             
-            // Focus actor
-            if (!string.IsNullOrEmpty(node.speakerId))
+            bool allowAuto = autoShowActors && Time.time >= manualOverrideUntil;
+            string speakerName = node.speakerName;
+            string resolvedActorId = actorController != null ? actorController.GetActorIdByDisplayName(speakerName) : string.Empty;
+
+            if (allowAuto && !string.IsNullOrEmpty(resolvedActorId))
             {
-                actorController.SetFocus(node.speakerId);
+                if (!actorController.IsActorShown(resolvedActorId))
+                {
+                    actorController.ShowActorAuto(resolvedActorId);
+                }
+                actorController.SetFocus(resolvedActorId);
             }
-            else
+            else if (allowAuto && string.IsNullOrEmpty(resolvedActorId))
             {
                 actorController.SetFocus(null); // Dim all
             }
 
             // Update UI
-            string displayName = !string.IsNullOrEmpty(node.speakerName) ? node.speakerName : actorController.GetDisplayName(node.speakerId);
+            string displayName = !string.IsNullOrEmpty(node.speakerName) ? node.speakerName : string.Empty;
             dialogueView.ShowLine(displayName, node.text);
 
             // Wait for typewriter
@@ -128,11 +148,12 @@ namespace DialogueSystem.Core
                 {
                     case "actor":
                         HandleActorCommand(parts);
+                        RegisterManualOverride();
                         break;
                     case "wait":
                         if (parts.Length > 1 && float.TryParse(parts[1], out float t))
                         {
-                            StartCoroutine(WaitRoutine(t, node.nextId));
+                            StartCoroutine(WaitRoutine(t, currentIndex + 1));
                             return;
                         }
                         break;
@@ -173,7 +194,7 @@ namespace DialogueSystem.Core
             }
 
             // Default: go to next node immediately
-            PlayNode(node.nextId);
+            PlayNodeAtIndex(++currentIndex);
         }
 
         private void HandleActorCommand(string[] parts)
@@ -189,6 +210,14 @@ namespace DialogueSystem.Core
             }
 
             string id = paramsMap.GetValueOrDefault("id");
+            if (string.IsNullOrEmpty(id))
+            {
+                string displayName = paramsMap.GetValueOrDefault("name");
+                if (!string.IsNullOrEmpty(displayName))
+                {
+                    id = actorController != null ? actorController.GetActorIdByDisplayName(displayName) : string.Empty;
+                }
+            }
             
             if (subAction == "show")
             {
@@ -246,10 +275,11 @@ namespace DialogueSystem.Core
             }
         }
 
-        private IEnumerator WaitRoutine(float time, string nextId)
+        private IEnumerator WaitRoutine(float time, int nextIndex)
         {
             yield return new WaitForSeconds(time);
-            PlayNode(nextId);
+            currentIndex = nextIndex;
+            PlayNodeAtIndex(currentIndex);
         }
 
         public void OnClickArea()
@@ -261,7 +291,7 @@ namespace DialogueSystem.Core
             else if (state == RunnerState.WaitingInput)
             {
                 dialogueView.ShowContinueIcon(false);
-                PlayNode(currentNode.nextId);
+                PlayNodeAtIndex(++currentIndex);
             }
         }
 
@@ -271,6 +301,37 @@ namespace DialogueSystem.Core
             dialogueView.Hide();
             Debug.Log("Dialogue Ended");
         }
+
+        public void HideUI()
+        {
+            dialogueView?.Hide();
+            if (historyView != null)
+            {
+                historyView.Toggle(false);
+            }
+            if (hideDialogueRootObject && dialogueRoot != null)
+            {
+                dialogueRoot.SetActive(false);
+            }
+        }
+
+        public void ShowUI()
+        {
+            if (hideDialogueRootObject && dialogueRoot != null)
+            {
+                dialogueRoot.SetActive(true);
+            }
+            if (dialogueViewComponent != null)
+            {
+                dialogueView = dialogueViewComponent as IDialogueView;
+            }
+        }
+
+        private void RegisterManualOverride()
+        {
+            manualOverrideUntil = Time.time + Mathf.Max(0f, commandOverrideSeconds);
+        }
+
     }
 
     public static class DictionaryExtensions

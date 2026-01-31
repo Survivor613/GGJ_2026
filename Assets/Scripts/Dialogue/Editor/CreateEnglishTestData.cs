@@ -17,39 +17,31 @@ public class CreateEnglishTestData : EditorWindow
         // 添加命令节点：显示角色
         var cmd1 = new CommandNode
         {
-            id = "cmd_show_alice",
             command = "actor show id=alice portrait=default x=-200 y=0",
-            nextId = "line_1"
         };
         
         // 添加对话节点1
         var line1 = new LineNode
         {
-            id = "line_1",
             speakerId = "alice",
             speakerName = "Alice",
             text = "Hello![pause=0.3] Welcome to the dialogue system test.",
-            nextId = "line_2"
         };
         
         // 添加对话节点2：带特效
         var line2 = new LineNode
         {
-            id = "line_2",
             speakerId = "alice",
             speakerName = "Alice",
             text = "I can speak [shake=2]very fast![/shake][pause=0.5] Or [spd=0.1]very slowly...[/spd]",
-            nextId = "line_3"
         };
         
         // 添加对话节点3：旁白
         var line3 = new LineNode
         {
-            id = "line_3",
             speakerId = "",
             speakerName = "Narrator",
             text = "This is a narrator text without character highlight.",
-            nextId = ""
         };
         
         dialogueScript.nodes.Add(cmd1);

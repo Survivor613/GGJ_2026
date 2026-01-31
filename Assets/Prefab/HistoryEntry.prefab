@@ -271,3 +271,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 3318969235267068421}
   contentText: {fileID: 3017330940289043080}
+  autoResize: 1
+  extraPadding: 8

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 using DialogueSystem.Core;
 using DialogueSystem.UI;
@@ -156,6 +157,7 @@ public class OneClickSetup : EditorWindow
         Debug.Log("\n<color=yellow>[步骤 4/8] 搭建场景...</color>");
         
         Canvas canvas = FindOrCreateCanvas();
+        EnsureEventSystem();
         GameObject actorLayer = CreateActorLayer(canvas.transform);
         GameObject dialoguePanel = CreateDialoguePanel(canvas.transform);
         GameObject historyPanel = CreateHistoryPanel(canvas.transform);
@@ -375,6 +377,18 @@ public class OneClickSetup : EditorWindow
             canvasGO.AddComponent<GraphicRaycaster>();
         }
         return canvas;
+    }
+
+    static void EnsureEventSystem()
+    {
+        if (GameObject.FindObjectOfType<EventSystem>() != null)
+        {
+            return;
+        }
+
+        GameObject eventSystemGO = new GameObject("EventSystem");
+        eventSystemGO.AddComponent<EventSystem>();
+        eventSystemGO.AddComponent<StandaloneInputModule>();
     }
     
     static GameObject CreateActorLayer(Transform parent)
