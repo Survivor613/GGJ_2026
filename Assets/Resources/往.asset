@@ -19,7 +19,9 @@ MonoBehaviour:
   - rid: 2889082959458205766
   - rid: 2889082959458205767
   - rid: 2889082959458205768
+  - rid: 2889082959458205825
   - rid: 2889082959458205769
+  - rid: 2889082959458205826
   - rid: 2889082959458205770
   - rid: 2889082959458205771
   - rid: 2889082959458205772
@@ -113,7 +115,7 @@ MonoBehaviour:
       type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         speakerId: 
-        speakerName: "\u8C1B\u542C\uFF08\u72D0\u72F8\u5F62\u6001\uFF09"
+        speakerName: "\u8C1B\u542C"
         text: "\u5431\u5431\u2026\u2026"
         voiceKey: 
         expressionKey: 
@@ -493,3 +495,11 @@ MonoBehaviour:
         text: "\u3010\u6D41\u7A0B\u7ED3\u675F\uFF0C\u653E\u5236\u4F5C\u4EBA\u540D\u5355\u3011"
         voiceKey: 
         expressionKey: 
+    - rid: 2889082959458205825
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=300 y=0"
+    - rid: 2889082959458205826
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u8C1B\u542C portrait=normal x=-500 y=0"

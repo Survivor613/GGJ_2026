@@ -256,7 +256,7 @@ MonoBehaviour:
     - rid: 2889082959458205822
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
-        command: scene load name=Level_2
+        command: scene Level_2
     - rid: 2889082959458205823
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
@@ -264,4 +264,4 @@ MonoBehaviour:
     - rid: 2889082959458205824
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
-        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=300 y=0"
+        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=400 y=0"
