@@ -30,7 +30,7 @@ public class Player_BasicAttackState : PlayerState
         // Define attack direction according to input  
         attackDir = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDir;
         
-        anim.SetInteger("basicAttackIndex", comboIndex);
+        SafeSetInteger("basicAttackIndex", comboIndex);
         ApplyAttackVelocity();
     }
 
@@ -57,7 +57,7 @@ public class Player_BasicAttackState : PlayerState
     {
         if (comboAttackQueue)
         {
-            anim.SetBool(animBoolName, false);   // make animator boolean false on the current frame and then true on the next frame
+            SafeSetBool(animBoolName, false);   // make animator boolean false on the current frame and then true on the next frame
             player.EnterAttackStateWithDelay();
         }
         else stateMachine.ChangeState(player.idleState);
