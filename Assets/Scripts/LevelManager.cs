@@ -21,7 +21,8 @@ public class LevelManager : MonoBehaviour
         newFadeUI.DoNewFadeIn();
 
         if (SceneManager.GetActiveScene().name == "Level_0"
-            || SceneManager.GetActiveScene().name == "Level_1")
+            || SceneManager.GetActiveScene().name == "Level_1"
+            || SceneManager.GetActiveScene().name == "Level_2")
             player.canAttack = true;
         else
             player.canAttack = false;
