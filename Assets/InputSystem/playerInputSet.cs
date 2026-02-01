@@ -335,6 +335,34 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Reset"",
+            ""id"": ""dd9eeba2-9a1e-42c7-9408-6d9b7d889003"",
+            ""actions"": [
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""04dd183b-ac35-4355-a5dc-e1b93fb10fdd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""58f07cbe-8848-4412-a3c9-d1cc6d454451"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -348,12 +376,16 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_OptionsUI = m_UI.FindAction("OptionsUI", throwIfNotFound: true);
+        // Reset
+        m_Reset = asset.FindActionMap("Reset", throwIfNotFound: true);
+        m_Reset_Reset = m_Reset.FindAction("Reset", throwIfNotFound: true);
     }
 
     ~@PlayerInputSet()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerInputSet.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, PlayerInputSet.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Reset.enabled, "This will cause a leak and performance issues, PlayerInputSet.Reset.Disable() has not been called.");
     }
 
     /// <summary>
@@ -650,6 +682,102 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="UIActions" /> instance referencing this action map.
     /// </summary>
     public UIActions @UI => new UIActions(this);
+
+    // Reset
+    private readonly InputActionMap m_Reset;
+    private List<IResetActions> m_ResetActionsCallbackInterfaces = new List<IResetActions>();
+    private readonly InputAction m_Reset_Reset;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Reset".
+    /// </summary>
+    public struct ResetActions
+    {
+        private @PlayerInputSet m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public ResetActions(@PlayerInputSet wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Reset/Reset".
+        /// </summary>
+        public InputAction @Reset => m_Wrapper.m_Reset_Reset;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Reset; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="ResetActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(ResetActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="ResetActions" />
+        public void AddCallbacks(IResetActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ResetActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ResetActionsCallbackInterfaces.Add(instance);
+            @Reset.started += instance.OnReset;
+            @Reset.performed += instance.OnReset;
+            @Reset.canceled += instance.OnReset;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="ResetActions" />
+        private void UnregisterCallbacks(IResetActions instance)
+        {
+            @Reset.started -= instance.OnReset;
+            @Reset.performed -= instance.OnReset;
+            @Reset.canceled -= instance.OnReset;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="ResetActions.UnregisterCallbacks(IResetActions)" />.
+        /// </summary>
+        /// <seealso cref="ResetActions.UnregisterCallbacks(IResetActions)" />
+        public void RemoveCallbacks(IResetActions instance)
+        {
+            if (m_Wrapper.m_ResetActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="ResetActions.AddCallbacks(IResetActions)" />
+        /// <seealso cref="ResetActions.RemoveCallbacks(IResetActions)" />
+        /// <seealso cref="ResetActions.UnregisterCallbacks(IResetActions)" />
+        public void SetCallbacks(IResetActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ResetActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ResetActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="ResetActions" /> instance referencing this action map.
+    /// </summary>
+    public ResetActions @Reset => new ResetActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player" which allows adding and removing callbacks.
     /// </summary>
@@ -700,5 +828,20 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnOptionsUI(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Reset" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="ResetActions.AddCallbacks(IResetActions)" />
+    /// <seealso cref="ResetActions.RemoveCallbacks(IResetActions)" />
+    public interface IResetActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Reset" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnReset(InputAction.CallbackContext context);
     }
 }

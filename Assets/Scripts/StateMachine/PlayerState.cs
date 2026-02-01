@@ -22,6 +22,9 @@ public abstract class PlayerState : EntityState
 
         if (input.Player.Dash.WasPressedThisFrame() && CanDash())
             stateMachine.ChangeState(player.dashState);
+
+        if (input.Reset.Reset.WasPressedThisFrame())
+            GameManager.instance.Reload();
     }
 
     public override void updateAnimationParameters()

@@ -28,6 +28,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ChangeSceneCo("Dialog_0"));
     }
 
+    public void Reload() // 临时实现，较为简单，未实现保存功能
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        StartCoroutine(ChangeSceneCo(currentSceneName));
+    }
+
     public void BackToMainMenu()
     {
         StartCoroutine(ChangeSceneCo("MainMenu"));

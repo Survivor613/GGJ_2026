@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1829110467152193322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.582, y: 0.0010000169, z: 0}
+  m_LocalPosition: {x: 0.582, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53,7 +53,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4594187422574343103
 Transform:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheckDistance: 0.4
-  wallCheckDistance: 0.5
+  wallCheckDistance: 0.2
   primaryWallCheck: {fileID: 2164649647644722610}
   secondaryWallCheck: {fileID: 0}
   primaryGroundCheck: {fileID: 8630907709544117636}
@@ -192,7 +192,6 @@ MonoBehaviour:
   dashSpeed: 20
   dashCoolDown: 1
   respawnLoc: {x: -112, y: 0, z: 0}
-  canAttack: 0
   isControlled: 1
 --- !u!114 &5455508789868366252
 MonoBehaviour:
@@ -436,7 +435,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1292609361
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: 1956564830, guid: f9761f0e1f7139c4ebdd202bb04a9232, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -496,11 +495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3720213958848163979, guid: d12210b40669abc4486e994539b90253, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3720213958848163979, guid: d12210b40669abc4486e994539b90253, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4871105634868030865, guid: d12210b40669abc4486e994539b90253, type: 3}
       propertyPath: m_Pivot.x

@@ -396,7 +396,7 @@ public class FormSwitcher : MonoBehaviour
     private void OnPlayerDeath()
     {
         // 死亡后重置为人类形态
-        StartCoroutine(ResetToHumanAfterDeath());
+        //StartCoroutine(ResetToHumanAfterDeath());
     }
 
     private IEnumerator ResetToHumanAfterDeath()
