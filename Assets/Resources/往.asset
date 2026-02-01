@@ -18,9 +18,12 @@ MonoBehaviour:
   - rid: 2889082959458205765
   - rid: 2889082959458205766
   - rid: 2889082959458205767
+  - rid: 6797970356654571521
+  - rid: 2889082959458205827
   - rid: 2889082959458205768
   - rid: 2889082959458205825
   - rid: 2889082959458205769
+  - rid: 6797970356654571520
   - rid: 2889082959458205826
   - rid: 2889082959458205770
   - rid: 2889082959458205771
@@ -41,6 +44,7 @@ MonoBehaviour:
   - rid: 2889082959458205786
   - rid: 2889082959458205787
   - rid: 2889082959458205788
+  - rid: 6797970356654571534
   - rid: 2889082959458205789
   - rid: 2889082959458205790
   - rid: 2889082959458205791
@@ -48,12 +52,16 @@ MonoBehaviour:
   - rid: 2889082959458205793
   - rid: 2889082959458205794
   - rid: 2889082959458205795
+  - rid: 6797970356654571522
+  - rid: 6797970356654571523
+  - rid: 6797970356654571524
   - rid: 2889082959458205796
   - rid: 2889082959458205797
   - rid: 2889082959458205798
   - rid: 2889082959458205799
   - rid: 2889082959458205800
   - rid: 2889082959458205801
+  - rid: 6797970356654571525
   - rid: 2889082959458205802
   - rid: 2889082959458205803
   - rid: 2889082959458205804
@@ -64,6 +72,8 @@ MonoBehaviour:
   - rid: 2889082959458205809
   - rid: 2889082959458205810
   - rid: 2889082959458205811
+  - rid: 6797970356654571526
+  - rid: 6797970356654571527
   - rid: 2889082959458205812
   - rid: 2889082959458205813
   - rid: 2889082959458205814
@@ -115,7 +125,7 @@ MonoBehaviour:
       type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         speakerId: 
-        speakerName: "\u8C1B\u542C"
+        speakerName: "\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09"
         text: "\u5431\u5431\u2026\u2026"
         voiceKey: 
         expressionKey: 
@@ -498,8 +508,51 @@ MonoBehaviour:
     - rid: 2889082959458205825
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
-        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=300 y=0"
+        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=300 y=-200 
+          scale=1.75"
     - rid: 2889082959458205826
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         command: "actor show name=\u8C1B\u542C portrait=normal x=-500 y=0"
+    - rid: 2889082959458205827
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09 portrait=normal
+          x=-500 y=0"
+    - rid: 6797970356654571520
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09"
+    - rid: 6797970356654571521
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u591C\u5C0F\u6843"
+    - rid: 6797970356654571522
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u8C1B\u542C"
+    - rid: 6797970356654571523
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u591C\u5C0F\u6843"
+    - rid: 6797970356654571524
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u591C\u5C0F\u6843 portrait=normal x=-500 y=0"
+    - rid: 6797970356654571525
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09 portrait=normal
+          x=-200 y=0"
+    - rid: 6797970356654571526
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09"
+    - rid: 6797970356654571527
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u8C1B\u542C portrait=normal x=-100 y=0"
+    - rid: 6797970356654571534
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: cg show name=CG1 time=1.5

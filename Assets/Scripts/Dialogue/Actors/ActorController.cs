@@ -30,7 +30,7 @@ namespace DialogueSystem.Actors
             }
         }
 
-        public void ShowActor(string actorId, string portraitKey, Vector2 position, float fadeTime = 0.2f)
+        public void ShowActor(string actorId, string portraitKey, Vector2 position, float fadeTime = 0.2f, float scale = 1f)
         {
             if (!activeActors.TryGetValue(actorId, out ActorView view))
             {
@@ -42,6 +42,7 @@ namespace DialogueSystem.Actors
 
             view.gameObject.SetActive(true);
             view.transform.localPosition = new Vector3(position.x, position.y, 0);
+            view.transform.localScale = Vector3.one * Mathf.Max(0.01f, scale);
             
             if (definitionsMap.TryGetValue(actorId, out var def))
             {

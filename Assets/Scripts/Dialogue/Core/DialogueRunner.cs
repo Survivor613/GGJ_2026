@@ -24,6 +24,7 @@ namespace DialogueSystem.Core
         [SerializeField] private MonoBehaviour dialogueViewComponent; // 可以是 DialogueView 或 DialogueViewUniversal
         [SerializeField] private ActorController actorController;
         [SerializeField] private HistoryView historyView;
+        [SerializeField] private CGView cgView;
         [Header("Actor Auto Display")]
         [SerializeField] private bool autoShowActors = true;
         [SerializeField] private float commandOverrideSeconds = 1.5f;
@@ -52,6 +53,10 @@ namespace DialogueSystem.Core
                 {
                     Debug.LogError("DialogueView 组件必须实现 IDialogueView 接口！");
                 }
+            }
+            if (cgView == null)
+            {
+                cgView = FindObjectOfType<CGView>(true);
             }
         }
 
@@ -190,6 +195,9 @@ namespace DialogueSystem.Core
                             }
                         }
                         break;
+                    case "cg":
+                        HandleCgCommand(parts);
+                        break;
                 }
             }
 
@@ -224,7 +232,13 @@ namespace DialogueSystem.Core
                 string portrait = paramsMap.GetValueOrDefault("portrait");
                 float x = float.Parse(paramsMap.GetValueOrDefault("x", "0"));
                 float y = float.Parse(paramsMap.GetValueOrDefault("y", "0"));
-                actorController.ShowActor(id, portrait, new Vector2(x, y));
+                float scale = 1f;
+                float.TryParse(paramsMap.GetValueOrDefault("scale", "1"), out scale);
+                actorController.ShowActor(id, portrait, new Vector2(x, y), 0.2f, scale);
+                if (!string.IsNullOrEmpty(id))
+                {
+                    actorController.SetFocus(id);
+                }
             }
             else if (subAction == "hide")
             {
@@ -233,6 +247,70 @@ namespace DialogueSystem.Core
             else if (subAction == "focus")
             {
                 actorController.SetFocus(id);
+            }
+        }
+
+        private void HandleCgCommand(string[] parts)
+        {
+            if (cgView == null)
+            {
+                cgView = FindObjectOfType<CGView>(true);
+                if (cgView == null)
+                {
+                    Debug.LogWarning("未找到 CGView，无法显示 CG。");
+                    return;
+                }
+            }
+
+            if (parts.Length < 2) return;
+            string action = parts[1].ToLower();
+
+            var paramsMap = new Dictionary<string, string>();
+            for (int i = 2; i < parts.Length; i++)
+            {
+                string[] kv = parts[i].Split('=');
+                if (kv.Length == 2) paramsMap[kv[0]] = kv[1];
+            }
+
+            if (action == "hide" || action == "clear")
+            {
+                cgView.Hide();
+                return;
+            }
+
+            string name = action == "show" ? paramsMap.GetValueOrDefault("name") : parts[1];
+            if (string.IsNullOrEmpty(name))
+            {
+                Debug.LogWarning("CG 命令缺少 name。示例：cg show name=CG_01");
+                return;
+            }
+
+            var sprite = Resources.Load<Sprite>($"CG/{name}") ?? Resources.Load<Sprite>(name);
+            if (sprite == null)
+            {
+                Debug.LogWarning($"未找到 CG 资源：{name}（路径尝试 Resources/CG/{name} 或 Resources/{name}）");
+            }
+
+            cgView.Show(sprite);
+
+            // 可选：自动隐藏
+            float duration = 0f;
+            if (paramsMap.TryGetValue("time", out string timeVal) || paramsMap.TryGetValue("duration", out timeVal))
+            {
+                float.TryParse(timeVal, out duration);
+            }
+            if (duration > 0f)
+            {
+                StartCoroutine(HideCgAfterSeconds(duration));
+            }
+        }
+
+        private IEnumerator HideCgAfterSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            if (cgView != null)
+            {
+                cgView.Hide();
             }
         }
 

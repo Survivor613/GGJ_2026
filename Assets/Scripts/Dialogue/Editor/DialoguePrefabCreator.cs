@@ -26,6 +26,7 @@ public class DialoguePrefabCreator : EditorWindow
         // 添加 Image
         Image image = actorGO.AddComponent<Image>();
         image.raycastTarget = false;
+        image.preserveAspect = true;
         
         // 添加 ActorView 脚本
         ActorView actorView = actorGO.AddComponent<ActorView>();

@@ -13,6 +13,8 @@ namespace DialogueSystem.UI
         [SerializeField] private Text nameText;  // Unity Text
         [SerializeField] private Text bodyText;  // Unity Text
         [SerializeField] private GameObject continueIcon;
+        [SerializeField] private Image continueIconImage;
+        [SerializeField] private Sprite continueIconSprite;
         [SerializeField] private TypewriterEffectUniversal typewriter;
         [Header("Text Scale")]
         [Range(0.5f, 3f)]
@@ -36,6 +38,7 @@ namespace DialogueSystem.UI
         private void Awake()
         {
             ApplyTextScale();
+            ApplyContinueIconSprite();
             ClearTexts();
         }
 
@@ -48,6 +51,7 @@ namespace DialogueSystem.UI
         private void OnValidate()
         {
             ApplyTextScale();
+            ApplyContinueIconSprite();
         }
 
         private void ApplyTextScale()
@@ -102,6 +106,23 @@ namespace DialogueSystem.UI
             Vector2 size = rect.sizeDelta;
             size.y = Mathf.Max(1f, preferredHeight);
             rect.sizeDelta = size;
+        }
+
+        private void ApplyContinueIconSprite()
+        {
+            if (continueIconImage == null && continueIcon != null)
+            {
+                continueIconImage = continueIcon.GetComponent<Image>();
+            }
+            if (continueIconImage != null && continueIconSprite != null)
+            {
+                continueIconImage.sprite = continueIconSprite;
+                continueIconImage.enabled = true;
+            }
+            if (continueIcon == null && continueIconImage != null)
+            {
+                continueIcon = continueIconImage.gameObject;
+            }
         }
 
         public void ShowLine(string speaker, string text)

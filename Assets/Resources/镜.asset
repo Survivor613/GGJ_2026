@@ -16,6 +16,7 @@ MonoBehaviour:
   - rid: 2889082959458205716
   - rid: 2889082959458205717
   - rid: 2889082959458205718
+  - rid: 6797970356654571535
   - rid: 2889082959458205719
   - rid: 2889082959458205720
   - rid: 2889082959458205721
@@ -210,3 +211,8 @@ MonoBehaviour:
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         command: scene Level_1
+    - rid: 6797970356654571535
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=300 y=-200 
+          scale=1.75"
