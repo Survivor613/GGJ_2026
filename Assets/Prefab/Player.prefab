@@ -183,7 +183,7 @@ MonoBehaviour:
   health: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 3136
   whatIsWall:
     serializedVersion: 2
     m_Bits: 64
@@ -394,7 +394,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1292609361
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a50e92d31286e9443ba84d44a113cd1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
