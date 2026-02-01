@@ -32,13 +32,18 @@ MonoBehaviour:
   - rid: 2889082959458205751
   - rid: 2889082959458205752
   - rid: 2889082959458205753
+  - rid: 6797970356654571531
   - rid: 2889082959458205754
   - rid: 2889082959458205755
   - rid: 2889082959458205756
   - rid: 2889082959458205757
+  - rid: 6797970356654571529
   - rid: 2889082959458205758
   - rid: 2889082959458205759
+  - rid: 6797970356654571530
   - rid: 2889082959458205760
+  - rid: 6797970356654571532
+  - rid: 6797970356654571533
   - rid: 2889082959458205761
   - rid: 2889082959458205762
   - rid: 2889082959458205822
@@ -241,7 +246,7 @@ MonoBehaviour:
       type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         speakerId: 
-        speakerName: "\u8C1B\u542C"
+        speakerName: "\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09"
         text: "\u5431\u5431\uFF01"
         voiceKey: 
         expressionKey: 
@@ -249,7 +254,7 @@ MonoBehaviour:
       type: {class: LineNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
         speakerId: 
-        speakerName: "\u8C1B\u542C"
+        speakerName: "\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09"
         text: "\u6211\u600E\u4E48\u53D8\u6210\u72D0\u72F8\u4E86\uFF1F\u8981\u88AB\u300C\u7075\u72D0\u300D\u593A\u820D\u4E86\uFF01"
         voiceKey: 
         expressionKey: 
@@ -264,4 +269,26 @@ MonoBehaviour:
     - rid: 2889082959458205824
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
-        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=400 y=0"
+        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=400 y=-200 
+          scale=1.75"
+    - rid: 6797970356654571529
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u591C\u5C0F\u6843 portrait=normal x=0 y=0"
+    - rid: 6797970356654571530
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u591C\u5C0F\u6843"
+    - rid: 6797970356654571531
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u591C\u5C0F\u6843"
+    - rid: 6797970356654571532
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor hide name=\u8C1B\u542C"
+    - rid: 6797970356654571533
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: "actor show name=\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09 portrait=normal
+          x=-300 y=0"

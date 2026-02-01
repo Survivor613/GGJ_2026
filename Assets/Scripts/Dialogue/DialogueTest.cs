@@ -83,21 +83,5 @@ public class DialogueTest : MonoBehaviour
         cachedHistoryView = FindObjectOfType<DialogueSystem.UI.HistoryView>(true);
     }
 
-    private void OnGUI()
-    {
-        // 简单的调试 GUI
-        GUILayout.BeginArea(new Rect(10, 10, 250, 150));
-        GUILayout.Box("对话系统调试工具");
-        
-        if (GUILayout.Button("开始对话"))
-        {
-            StartTestDialogue();
-        }
-        
-        GUILayout.Label($"快捷键 [{historyToggleKey}]: 历史面板");
-        GUILayout.Label($"快捷键 [{restartKey}]: 重新开始");
-        GUILayout.Label($"鼠标点击: 推进/跳过");
-        
-        GUILayout.EndArea();
-    }
+    // 调试 GUI 已移除
 }

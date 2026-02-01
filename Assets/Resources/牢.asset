@@ -184,7 +184,8 @@ MonoBehaviour:
     - rid: 2889082959458205818
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:
-        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=400 y=0"
+        command: "actor show name=\u72D0\u5A46\u5A46 portrait=normal x=300 y=-200 
+          scale=1.75"
     - rid: 2889082959458205819
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:

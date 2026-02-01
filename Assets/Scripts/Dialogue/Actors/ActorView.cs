@@ -14,16 +14,32 @@ namespace DialogueSystem.Actors
         private Coroutine fadeCo;
         private Coroutine colorCo;
         private Coroutine scaleCo;
+        private Vector3 baseScale = Vector3.one;
+        private bool isFocused;
+
+        private void Awake()
+        {
+            ApplyPreserveAspect();
+            CacheBaseScale();
+        }
+
+        private void OnValidate()
+        {
+            ApplyPreserveAspect();
+            CacheBaseScale();
+        }
 
         public void Init(string id)
         {
             ActorId = id;
             canvasGroup.alpha = 0;
+            CacheBaseScale();
         }
 
         public void SetPortrait(Sprite sprite)
         {
             portraitImage.sprite = sprite;
+            ApplyPreserveAspect();
         }
 
         public void Show(float duration = 0.2f)
@@ -42,9 +58,16 @@ namespace DialogueSystem.Actors
         {
             StopColor();
             StopScale();
+
+            if (focused && !isFocused)
+            {
+                // 当从未聚焦 -> 聚焦时，记录当前尺寸作为基准
+                CacheBaseScale();
+            }
+            isFocused = focused;
             
             Color targetColor = focused ? Color.white : new Color(0.6f, 0.6f, 0.6f, 1f);
-            Vector3 targetScale = focused ? Vector3.one * 1.05f : Vector3.one;
+            Vector3 targetScale = focused ? baseScale * 1.05f : baseScale;
             
             colorCo = StartCoroutine(ColorRoutine(targetColor, duration));
             scaleCo = StartCoroutine(ScaleRoutine(targetScale, duration));
@@ -92,6 +115,24 @@ namespace DialogueSystem.Actors
                 yield return null;
             }
             transform.localScale = targetScale;
+        }
+
+        private void ApplyPreserveAspect()
+        {
+            if (portraitImage != null)
+            {
+                portraitImage.preserveAspect = true;
+            }
+        }
+
+        private void CacheBaseScale()
+        {
+            baseScale = transform.localScale;
+        }
+
+        public void RefreshBaseScale()
+        {
+            CacheBaseScale();
         }
     }
 }
