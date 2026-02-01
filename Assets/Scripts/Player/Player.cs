@@ -73,9 +73,6 @@ public class Player : Entity
     [Header("Respawn details")]
     [SerializeField] public Vector3 respawnLoc;
 
-    [Header("Skills Able")]
-    [SerializeField] public bool canAttack;
-
     [Header("Double Player")]
     [SerializeField] public bool isControlled = true;
 

@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
 
         // Initialize Sound Value
         currentBgmValue = 0.2f;
-        currentSfxValue = 0.6f;
+        currentSfxValue = 0.2f;
         SetBGMVolume(currentBgmValue);
         SetSFXVolume(currentSfxValue);
     }

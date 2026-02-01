@@ -90,12 +90,24 @@ MonoBehaviour:
     - {fileID: 8300000, guid: cd447fab07a1d634584771a4c9bb9875, type: 3}
     volume: 0.3
   mainMenuMusic:
-  - audioName: playlist_mainMenu
+  - audioName: MainMenu
     clips:
-    - {fileID: 8300000, guid: 2548e21061acca641934953fdde343ff, type: 3}
-    volume: 0.4
+    - {fileID: 8300000, guid: 85fade6324dbf1b479d9ac079a01b2e9, type: 3}
+    volume: 0.5
   levelMusic:
-  - audioName: playlist_levels
+  - audioName: Level_0
     clips:
-    - {fileID: 8300000, guid: 2548e21061acca641934953fdde343ff, type: 3}
+    - {fileID: 8300000, guid: 89ab98b6850d56345b61b2afa798107a, type: 3}
+    volume: 0.4
+  - audioName: Level_1
+    clips:
+    - {fileID: 8300000, guid: 540584b891db60a4795a1b5e55065eca, type: 3}
+    volume: 0.4
+  - audioName: Conversation
+    clips:
+    - {fileID: 8300000, guid: 85fade6324dbf1b479d9ac079a01b2e9, type: 3}
+    volume: 0.4
+  - audioName: Level_2
+    clips:
+    - {fileID: 8300000, guid: 83c1c4f9aa8d1d54f8457dde595ea471, type: 3}
     volume: 0.4

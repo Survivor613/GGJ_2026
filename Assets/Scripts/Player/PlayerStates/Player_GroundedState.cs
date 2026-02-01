@@ -40,12 +40,8 @@ public class Player_GroundedState : PlayerState
 
         if (input.Player.Attack.WasPressedThisFrame())
         {
-            if (player.canAttack == true)
-            {
-                stateMachine.ChangeState(player.basicAttackState);
-                return;
-
-            }
+            stateMachine.ChangeState(player.basicAttackState);
+            return;
         }
     }
 }

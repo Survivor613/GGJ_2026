@@ -2489,7 +2489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967f6529c7c57ff42ba5efe04b02eb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicGroupName: playlist_levels
+  musicGroupName: Level_1
 --- !u!4 &805665908
 Transform:
   m_ObjectHideFlags: 0
