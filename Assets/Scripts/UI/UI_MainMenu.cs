@@ -14,7 +14,7 @@ public class UI_MainMenu : MonoBehaviour
     private void Start()
     {
         newFadeUI.DoNewFadeIn(needSFX: false);
-        AudioManager.instance.PlayBGM("playlist_mainMenu");
+        AudioManager.instance.PlayBGM("MainMenu");
     }
 
     public void PlayBTN()
@@ -32,7 +32,7 @@ public class UI_MainMenu : MonoBehaviour
     {
         //AudioManager.instance.PlayGlobalSFX("button_click");
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #else
             Application.Quit();
