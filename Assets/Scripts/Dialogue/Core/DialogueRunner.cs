@@ -59,9 +59,29 @@ namespace DialogueSystem.Core
                 cgView = FindObjectOfType<CGView>(true);
             }
         }
+        
+        private void OnDestroy()
+        {
+            // 场景切换时清理角色
+            if (actorController != null)
+            {
+                actorController.ClearAllActors();
+            }
+            
+            if (Instance == this)
+            {
+                Instance = null;
+            }
+        }
 
         public void StartDialogue(DialogueScriptSO script, string startNodeId = "")
         {
+            // 在开始新对话时清理旧的角色
+            if (actorController != null)
+            {
+                actorController.ClearAllActors();
+            }
+            
             currentScript = script;
             if (!string.IsNullOrEmpty(startNodeId))
             {
@@ -377,6 +397,13 @@ namespace DialogueSystem.Core
         {
             state = RunnerState.Idle;
             dialogueView.Hide();
+            
+            // 清理所有角色立绘
+            if (actorController != null)
+            {
+                actorController.ClearAllActors();
+            }
+            
             Debug.Log("Dialogue Ended");
         }
 
@@ -390,6 +417,11 @@ namespace DialogueSystem.Core
             if (hideDialogueRootObject && dialogueRoot != null)
             {
                 dialogueRoot.SetActive(false);
+            }
+            // 隐藏UI时也清理角色立绘
+            if (actorController != null)
+            {
+                actorController.HideAllActors();
             }
         }
 

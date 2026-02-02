@@ -44,18 +44,22 @@ namespace DialogueSystem.Actors
 
         public void Show(float duration = 0.2f)
         {
+            gameObject.SetActive(true);
             StopFade();
             fadeCo = StartCoroutine(FadeRoutine(1, duration));
         }
 
         public void Hide(float duration = 0.2f)
         {
+            if (!gameObject.activeInHierarchy) return;
             StopFade();
             fadeCo = StartCoroutine(FadeRoutine(0, duration));
         }
 
         public void SetFocus(bool focused, float duration = 0.2f)
         {
+            if (!gameObject.activeInHierarchy) return;
+            
             StopColor();
             StopScale();
 

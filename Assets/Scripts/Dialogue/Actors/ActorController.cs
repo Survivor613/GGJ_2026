@@ -40,7 +40,12 @@ namespace DialogueSystem.Actors
                 activeActors[actorId] = view;
             }
 
-            view.gameObject.SetActive(true);
+            // 确保 GameObject 激活
+            if (!view.gameObject.activeInHierarchy)
+            {
+                view.gameObject.SetActive(true);
+            }
+            
             view.transform.localPosition = new Vector3(position.x, position.y, 0);
             view.transform.localScale = Vector3.one * Mathf.Max(0.01f, scale);
             
@@ -82,8 +87,35 @@ namespace DialogueSystem.Actors
         {
             foreach (var kvp in activeActors)
             {
-                kvp.Value.SetFocus(kvp.Key == focusedActorId, duration);
+                // 只对激活状态的角色设置焦点
+                if (kvp.Value != null && kvp.Value.gameObject.activeInHierarchy)
+                {
+                    kvp.Value.SetFocus(kvp.Key == focusedActorId, duration);
+                }
             }
+        }
+        
+        public void HideAllActors(float fadeTime = 0.2f)
+        {
+            foreach (var kvp in activeActors)
+            {
+                if (kvp.Value != null)
+                {
+                    kvp.Value.Hide(fadeTime);
+                }
+            }
+        }
+        
+        public void ClearAllActors()
+        {
+            foreach (var kvp in activeActors)
+            {
+                if (kvp.Value != null && kvp.Value.gameObject != null)
+                {
+                    Destroy(kvp.Value.gameObject);
+                }
+            }
+            activeActors.Clear();
         }
         
         public string GetDisplayName(string actorId)

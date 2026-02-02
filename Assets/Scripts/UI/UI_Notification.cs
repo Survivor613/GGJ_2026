@@ -17,7 +17,7 @@ public class UI_Notification : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Íæ¼Ò½øÈëÇøÓòºóÏÔÊ¾²Ù×÷ÌáÊ¾
+        // ç©å®¶è¿›å…¥åŒºåŸŸåæ˜¾ç¤ºæ“ä½œæç¤º
         if (other.CompareTag("Player"))
         {
             DisplayNotification();
@@ -26,7 +26,7 @@ public class UI_Notification : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Íæ¼ÒÀë¿ªÇøÓòºóÒş²Ø²Ù×÷ÌáÊ¾
+        // ç©å®¶ç¦»å¼€åŒºåŸŸåéšè—æ“ä½œæç¤º
         if (other.CompareTag("Player"))
         {
             HideNotification();
@@ -36,7 +36,7 @@ public class UI_Notification : MonoBehaviour
     private void DisplayNotification()
     {
         fadeUI.DoFadeInForSpecificUI(canvasGroup, notificationUIFadeDuration);
-        
+
     }
 
     private void HideNotification()
