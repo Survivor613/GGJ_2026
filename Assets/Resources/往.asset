@@ -78,6 +78,7 @@ MonoBehaviour:
   - rid: 2889082959458205813
   - rid: 2889082959458205814
   - rid: 2889082959458205815
+  - rid: 5314036504088805376
   references:
     version: 2
     RefIds:
@@ -519,6 +520,10 @@ MonoBehaviour:
       data:
         command: "actor show name=\u8C1B\u542C\uFF08\u72D0\u72F8\uFF09 portrait=normal
           x=-500 y=0"
+    - rid: 5314036504088805376
+      type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
+      data:
+        command: scene Credits
     - rid: 6797970356654571520
       type: {class: CommandNode, ns: DialogueSystem.Data, asm: Assembly-CSharp}
       data:

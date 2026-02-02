@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        StartCoroutine(ChangeSceneCo("MainMenu"));
+        StartCoroutine(ChangeSceneCo("MainMenuNew"));
     }
 
     public void ChangeSceneTo(string sceneName)
